@@ -7,3 +7,4 @@ WIP...
 ## 参与翻译
 欢迎你参与翻译，如果你是第一次编辑Markdown文件  
 请先了解[Markdown 基本语法](https://markdown.com.cn/basic-syntax/)  
+现有2种参与方式，[Pull request](https://github.com/DKAMX/BaroModDoc-CN/pulls)和[讨论版](https://github.com/DKAMX/BaroModDoc-CN/discussions)，自由选择 :)
