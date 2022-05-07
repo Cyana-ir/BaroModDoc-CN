@@ -2,7 +2,7 @@
 
 潜渊症 的大部分内容都是在[XML文件](https://baike.baidu.com/item/可扩展标记语言)中定义的。如果您以前从未使用过这些代码文件，它们可能看起来令人生畏，但即使您从未进行过任何类型的编程，它们实际上也很容易理解。
 
-XML 文件几乎可以被任何文本编辑器（甚至是记事本）编辑，但我们建议使用支持代码突出显示并能够指出文件中错误的文本编辑器。例如，[Notepad++](https://notepad-plus-plus.org/) 是一款支持 XML 代码突出显示的免费、易于使用的软件。其他不错的选择还有 [Sublime Text]https://sublimetext.com/) 和 [Visual Studio Code](https://code.visualstudio.com/) 。
+XML 文件几乎可以被任何文本编辑器（甚至是记事本）编辑，但我们建议使用支持代码突出显示并能够指出文件中错误的文本编辑器。例如，[Notepad++](https://notepad-plus-plus.org/) 是一款支持 XML 代码突出显示的免费、易于使用的软件。其他不错的选择还有 [Sublime Text](https://sublimetext.com/) 和 [Visual Studio Code](https://code.visualstudio.com/) 。
 
 XML 文件由元素组成，由开始标记和结束标记分隔。在 潜渊症 的案例中，元素可以是例如项目。此类元素可以定义如下：
 
