@@ -1,27 +1,26 @@
-# Content packages
+# 内容包
 
-Content packages are collections of files that define many of the properties of the things that exist in Barotrauma. This includes [items](../ContentTypes/Item.md), [structures](../ContentTypes/Structure.md), [monsters](../ContentTypes/Character.md), [random events](../ContentTypes/RandomEvents.md), [level generation parameters](../ContentTypes/LevelGenerationParameters.md), [jobs](../ContentTypes/Jobs.md) and so on. You can see a full list of what content packages define in the [Content Types](ContentTypes.md) page.
+内容包是文件的集合，用于定义 潜渊症 中存在的事物的许多属性。这包括 [物品](../ContentTypes/Item.md)，[结构](../ContentTypes/Structure.md)，[怪物](../ContentTypes/Character.md)，[随机事件](../ContentTypes/RandomEvents.md)，[关卡生成参数](../ContentTypes/LevelGenerationParameters.md)，[职业](../ContentTypes/Jobs.md) 等。您可以在 [内容类型](ContentTypes.md) 页面中查看内容包定义内容的完整列表。
 
-By default the game uses a single content package called "Vanilla". Any other content package can be considered a modification of the game content, that is, a "mod".
+默认情况下，游戏使用一个名为“Vanilla”的内容包。任何其他内容包都可以被视为对游戏内容的修改，即“mod”。
 
-Content packages largely consist of text files in a format called XML, along with any required textures and sounds. If you have no prior experience with the XML format, don’t worry – even though it may look intimidating at first, the format is pretty simple. Please see the [XML](XML.md) page for further details.
+内容包主要由称为 XML 的格式的文本文件以及任何所需的纹理和声音组成。如果您以前没有使用XML格式的经验，请不要担心 - 即使它一开始看起来很吓人，但格式非常简单。有关更多详细信息，请参阅 [XML](XML.md) 页面。
 
-Any content package that you are editing should be found in a folder within the `LocalMods` directory, which can be found among the game files. To reach the game files, right click on Barotrauma in your Steam library, and go to `Manage > Browse local files`:
-![](img/BrowseLocalFiles.png)
+您正在编辑的任何内容包都应在根目录中的`LocalMods`文件夹中找到，该目录可以在游戏文件中找到。要访问游戏文件，请右键单击 Steam 库中的 潜渊症，然后转到`管理`>`浏览本地文件`。
 
-## File list
+## 文件列表
 
-The file list is a vital part of every content package; it allows the game to know which other XML files to load and the purpose each of them serves. For any given mod, its filename will always be `filelist.xml`. The [submarine](../Editors/SubmarineEditor.md) and [character](../Editors/CharacterEditor.md) editors will generate a basic file list for each of your creations.
+文件列表是每个内容包的重要组成部分;它允许游戏知道要加载哪些其他XML文件以及每个文件的用途。对于任何给定的mod，其文件名将始终为 `filelist.xml`。[潜艇](../Editors/SubmarineEditor.md) 和 [人物](../Editors/CharacterEditor.md) 编辑器将为您的每个创作生成一个基本文件列表。
 
-The root element of the content package has the following attributes:
-- `name`: The name for this content package that is seen by players in-game.
-- `modversion`: The version number of the mod. Typically, this will increment as new versions of the mod are published to the Workshop. Currently, this is simply a hint for modders to be able to check which version of a mod is being used.
-- `gameversion`: The version number that this mod was last updated for. This may be used by the game to detect mods that need to be modified for backwards compatibility.
-- `corepackage`: Whether or not the content package is a "core" package, [described in a separate section](#core-packages).
+内容包的根元素具有以下属性：
+- `name`：玩家在游戏中看到的此内容包的名称。
+- `modversion`：mod 的版本号。通常，随着新版本的模组发布到创意工坊，这种情况会逐渐增加。目前，这只是一个提示，让模组制作者能够检查正在使用的模组版本。
+- `gameversion`：此模组上次更新的版本号。游戏可以使用此功能来检测需要修改以使其向后兼容的模组。
+- `corepackage`：此内容包是否是一个“核心”包, [在下文有单独介绍](#core-packages)。
 
-This root element then has a child element for each content XML file that needs to be loaded. The name of each of these child elements must be one of the content types listed in the [Content Types](ContentTypes.md) page.
+然后，此根元素具有需要加载的每个内容 XML 文件的子元素。每个子元素的名称必须是 [内容类型](ContentTypes.md) 中列出的类型。
 
-The following example consists of a single file that defines an [Item file](../ContentTypes/Item.md).
+下面的示例由一个文件组成，该文件定义了一个 [物品文件](../ContentTypes/Item.md)。
 
 ```xml
 <contentpackage name="Alien Wrench" modversion="1.0.0" gameversion="0.17.8.0" corepackage="false">
@@ -29,14 +28,12 @@ The following example consists of a single file that defines an [Item file](../C
 </contentpackage>
 ```
 
-### Core packages
+### 核心包
 
-If you're not an advanced modder, you probably don't need to read this section.
+如果您不是进阶mod制作者，则可能不需要阅读本节。
 
-Most mods are usually not core content packages, but instead add things to or modify things in the Vanilla content package (= the default content of the game).
+大多数模组通常不是核心内容包，而是在Vanilla内容包中添加或修改内容（游戏的默认内容）。
 
-Core packages are packages that contain all the necessary files to make the game run, instead of just adding some extra files on top of another content package. There can only be one core package selected at a time.
+核心包是包含使游戏运行所需的所有文件的包，而不仅仅是在另一个内容包之上添加一些额外的文件。一次只能选择一个核心包。
 
-This kind of package exists for mods that are extremely thorough and require disabling content from the vanilla game outright. Typically this is not what you want to use, as [overrides](Overrides.md) are usually sufficient and core mods are likely to break as we make updates that add more required files.
-
-[TODO: add list of required content types]
+这种软件包适用于非常彻底的模组，需要完全禁用香草游戏的内容。通常，这不是你想要使用的，因为[overrides](Overrides.md)通常就足够了，当我们进行更新以添加更多所需文件时，核心包mod可能会变得不兼容。
