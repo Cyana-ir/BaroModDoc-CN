@@ -1,18 +1,18 @@
-# ConcatComponent
+# Concat组件
 
 
-## Attributes
+## 属性
 
-| Attribute|Type|Default value|Description |
+| 属性|类型|默认值|描述 |
 | ---|---|---|--- |
-| MaxOutputLength|int|256|The maximum length of the output string. Warning: Large values can lead to large memory usage or networking load. |
+| MaxOutputLength|int|256|输出字符串的最大长度. 警告:较大的值可能会导致大量内存使用或网络负载. |
 | Separator|string|""| |
-| TimeFrame|float|0.0|The item must have received signals to both inputs within this timeframe to output the result. If set to 0, the inputs must be received at the same time. |
+| TimeFrame|float|0.0|此组件必须在此时间范围内接收到两个输入的信号才能输出结果. 如果设置为 0,则必须同时接收输入. |
 
-This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
+此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
 
 
-## Example
+## 例子
 ```xml
 <Item identifier="concatcomponent" category="Electrical" Tags="smallitem,logic" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
   <ConcatComponent canbeselected="true" />

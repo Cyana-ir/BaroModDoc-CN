@@ -1,19 +1,19 @@
-# AndComponent
+# AND组件
 
 
-## Attributes
+## 属性
 
-| Attribute|Type|Default value|Description |
+| 属性|类型|默认值|描述 |
 | ---|---|---|--- |
-| TimeFrame|float|0.0|The item sends the output if both inputs have received a non-zero signal within the timeframe. If set to 0, the inputs must receive a signal at the same time. |
-| MaxOutputLength|int|200|The maximum length of the output strings. Warning: Large values can lead to large memory usage or networking issues. |
-| Output|string|"1"|The signal sent when the condition is met. |
-| FalseOutput|string|""|The signal sent when the condition is met (if empty, no signal is sent). |
+| TimeFrame|float|0.0|如果两个输入在时间范围内都收到非零信号，则该项目将发送输出.如果设置为 0,则输入必须同时接收信号.|
+| MaxOutputLength|int|200|输出字符串的最大长度.注意：较大的值可能会导致内存使用量过大或出现网络问题.|
+| Output|string|"1"|满足条件时发送的信号. |
+| FalseOutput|string|""|满足条件时发送的信号(如果为空,则不发送任何信号). |
 
-This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
+此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)f
 
 
-## Example
+## 例子
 ```xml
 <Item identifier="andcomponent" category="Electrical" Tags="smallitem,logic" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
   <AndComponent canbeselected="true" />
@@ -28,4 +28,3 @@ This component also supports the attributes defined in: [ItemComponent](ItemComp
   [...]
 </Item>
 ```
-
