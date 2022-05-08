@@ -15,7 +15,7 @@ public class ItemRip : Command
     private record TreeNode(ClassDeclarationSyntax Class)
     {
         public record Attribute(string Name, string Type, string DefaultValue, string Description);
-        
+
         public readonly List<TreeNode> Children = new();
         public readonly HashSet<TreeNode> InteractsWith = new();
         public string Name => Class.Identifier.Text;
@@ -35,7 +35,7 @@ public class ItemRip : Command
 
                     string cleanupDefaultValue(string v)
                         => v.EndsWith("f") ? v[..^1] : v;
-                    
+
                     string cleanupDescription(string desc)
                         => CSharpScript.EvaluateAsync<string>(desc).Result;
 
@@ -60,7 +60,7 @@ public class ItemRip : Command
                             ? arg?.Expression.ToString() ?? ""
                             : "";
                     }
-                    
+
                     yield return new Attribute(
                         Name: property.Identifier.Text,
                         Type: property.Type.ToString(),
@@ -69,19 +69,21 @@ public class ItemRip : Command
                 }
             }
         }
-        
+
         public bool IsAbstract => Class.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword));
-        
+
         public TreeNode? Parent = null;
     }
-    
-    public void Invoke(string repoPath = "C:/Users/juanj/Desktop/Repos/Barotrauma-development")
+
+    public override void Invoke(string[] args)
     {
+        string repoPath = args.Length > 0 ? args[0] : "C:/Users/juanj/Desktop/Repos/Barotrauma-development";
+
         Directory.SetCurrentDirectory(repoPath);
 
         const string srcPathFmt = "Barotrauma/Barotrauma{0}/{0}Source/Items";
-        string[] srcPathParams = {"Shared"};
-        
+        string[] srcPathParams = { "Shared" };
+
         var itemComponentRipper = new ItemComponentRipper();
         int prevTypeCount;
         do
@@ -113,6 +115,19 @@ public class ItemRip : Command
             }
             nodes.Add(newNode.Name, newNode);
         }
+
+        /*var treeTop = nodes["ItemComponent"];
+        void print(TreeNode node, int indent)
+        {
+            Console.WriteLine("{0}\\_{1}",
+                string.Concat(Enumerable.Repeat("| ", indent)), node.Name);
+            for (int i=0;i<node.Children.Count;i++)
+            {
+                var child = node.Children[i];
+                print(child, indent+1);
+            }
+        }
+        print(treeTop, 0);*/
 
         //Find references from one class to another
         var referenceFinder
@@ -200,7 +215,7 @@ public class ItemRip : Command
                 examples.Add(node, result);
             }
         }
-        
+
         //Trim the extracted examples by removing any elements that do not illustrate the components
         Dictionary<TreeNode, XElement> trimmedExamples = new();
         foreach (var (node, example) in examples)
@@ -225,30 +240,30 @@ public class ItemRip : Command
             if (markOmission) { trimmed.Add(new XElement("__OMISSION__")); }
             trimmedExamples.Add(node, trimmed);
         }
-        
+
         //Convert the trimmed examples to Markdown and write the pages
         Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetCallingAssembly().Location)!);
         Directory.CreateDirectory("ItemComponents");
         foreach (var node in nodes.Values)
         {
             if (node.IsAbstract) { continue; }
-            
+
             Page page = new();
             page.Title = node.Name;
 
             Page.Section attributesSection = new(); page.Subsections.Add(attributesSection);
-            attributesSection.Title = "Attributes";
+            attributesSection.Title = "属性";
 
             Page.Table attributesTable = new()
             {
-                HeadRow = new Page.Table.Row("Attribute", "Type", "Default value", "Description")
+                HeadRow = new Page.Table.Row("属性", "类型", "默认值", "描述")
             };
 
             IEnumerable<TreeNode.Attribute> getAttributes(TreeNode n)
                 => n.Attributes.Concat(n.Parent is { IsAbstract: true }
                     ? getAttributes(n.Parent)
                     : Enumerable.Empty<TreeNode.Attribute>());
-            
+
             foreach (var attr in getAttributes(node))
             {
                 attributesTable.BodyRows.Add(new Page.Table.Row(attr.Name, attr.Type, attr.DefaultValue, attr.Description));
@@ -266,7 +281,7 @@ public class ItemRip : Command
             attributesSection.Body.Components.Add(new Page.NewLine());
             if (node.Parent != null)
             {
-                attributesSection.Body.Components.Add(new Page.RawText($"This component {(attributesTable.BodyRows.Any() ? "also " : "")}supports the attributes defined in: "));
+                attributesSection.Body.Components.Add(new Page.RawText($"该组件{(attributesTable.BodyRows.Any() ? "也" : "")}支持定义在这些地方的属性："));
                 var p = node.Parent;
                 while (true)
                 {
@@ -280,13 +295,13 @@ public class ItemRip : Command
             if (trimmedExamples.TryGetValue(node, out var example))
             {
                 Page.Section exampleSection = new(); page.Subsections.Add(exampleSection);
-                exampleSection.Title = "Example";
+                exampleSection.Title = "例子";
                 exampleSection.Body.Components.Add(Page.CodeBlock.FromXElement(example)
                     .PostProcess(s => s.Replace("<__OMISSION__ />", "[...]")));
                 File.WriteAllText(Path.Combine("ItemComponents", $"{node.Name}.md"), page.ToMarkdown());
             }
         }
-        
+
         //Write a list of non-abstract components first in inheritance order, then alphabetical
         Page listPage = new();
         Page.BulletList list = new(); listPage.Body.Components.Add(list);
