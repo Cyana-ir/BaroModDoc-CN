@@ -1,15 +1,16 @@
 ---
 ---
-## 主题
-- 编辑器
-  - [潜艇编辑器](Editors/SubmarineEditor.md)
-  - [人物编辑器](Editors/CharacterEditor.md)
+## Topics
+- Editors
+  - [Submarine editor](Editors/SubmarineEditor.md)
+    - [Diving deeper](Editors/SubEditorHex.md)
+  - [Character editor](Editors/CharacterEditor.md)
 
 - XML
-  - [XML以及潜渊症如何运用它](Intro/XML.md)
-  - [内容包 Content packages](Intro/ContentPackages.md)
-    - [内容类型 Content types](Intro/ContentTypes.md)
-  - [覆盖 Overrides](Intro/Overrides.md)
+  - [XML and how Barotrauma uses it](Intro/XML.md)
+  - [Content packages](Intro/ContentPackages.md)
+    - [Content types](Intro/ContentTypes.md)
+  - [Overrides](Intro/Overrides.md)
 
-- [发布到Steam创意工坊](Intro/Publishing.md)
-- [疑难解答](Misc/Troubleshooting.md)
+- [Publishing to Steam Workshop](Intro/Publishing.md)
+- [Troubleshooting](Misc/Troubleshooting.md)
