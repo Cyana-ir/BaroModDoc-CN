@@ -1,17 +1,17 @@
-# ButtonTerminal
+# Button Terminal
 
 
-## Attributes
+## 属性
 
-| Attribute|Type|Default value|Description |
+| 属性|类型|默认值|描述 |
 | ---|---|---|--- |
-| Signals|string[]|new string[0]|Signals sent when the corresponding buttons are pressed. |
-| ActivatingItems|string|""|Identifiers or tags of items that, when contained, allow the terminal buttons to be used. Multiple ones should be separated by commas. |
+| Signals|string[]|new string[0]|按下相应按钮时发送的信号. |
+| activatingitems|string|""|物品的ID或tag,当包含时,允许使用按钮.多个应用逗号分隔. |
 
-This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
+此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
 
 
-## Example
+## 例子
 ```xml
 <Item identifier="alienterminal" category="Alien" Tags="smallitem,logic" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
   <ButtonTerminal activatingitems="smallalienartifact" canbeselected="true" msg="ItemMsgInteractSelect">
@@ -31,4 +31,3 @@ This component also supports the attributes defined in: [ItemComponent](ItemComp
   [...]
 </Item>
 ```
-

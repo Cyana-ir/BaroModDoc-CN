@@ -1,25 +1,25 @@
 ---
-has_toc: true
+拥有目录：true
 ---
-# Troubleshooting
-## The custom submarines/item assemblies/mods I made before v0.17 have disappeared
-The game will not attempt to delete any of the mods you've created in past versions of the game, so the files should still exist.
+# 故障排除
+## 我在 v0.17 之前制作的自定义潜艇/物品组件/模组已经消失了
+游戏不会尝试删除您在游戏过去版本中创建的任何模组，因此文件应仍然存在于MODS or LocalMods
 
-Upon first launch of v0.17, the game will check for any existing old mods and submarines and ask you to transfer them to your LocalMods folder. It's possible that the game didn't automatically enable the resulting mods, so first you may want to click on the `Steam Workshop` button on the main menu and see if your submarines are in the `Disabled regular packages` list. If they are there, select them (**TIP:** hold Ctrl or Shift to select multiple mods) and drag them into the `Enabled regular packages` list, and hit `Apply`. Now your submarines should appear in the submarine editor.
+首次发布v0.17后，游戏将检查任何现有的旧模组和潜艇，并要求您将它们转移到LocalMods文件夹中。游戏可能没有自动启用生成的模组，因此首先您可能需要单击主菜单上的“Steam创意工坊”按钮，然后查看您的潜艇是否在“禁用常规包”列表中。如果它们在那里，请选择它们(**TIP:**按住Ctrl或Shift以选择多个模组)，然后将它们拖到“启用的常规包”列表中，然后点击“应用”。现在你的潜艇应该出现在潜艇编辑器中。
 
-If your old mods are not present in the list, it's possible that the process to copy them over failed or was cancelled. To trigger it again to retry, go into the game's local files and delete `Mods/LOCALMODS_README.txt`. Then, restart the game and select your missing mods. Then, for good measure, check that they are enabled as described previously.
+如果您的旧模组未出现在列表中，则可能是复制它们的时候失败or取消。要再次触发它以重试，请进入游戏的本地文件并删除"Mods/LOCALMODS_README.txt"。然后，重新启动游戏并选择您丢失的模组。然后，为了更好地衡量，请检查它们是否已按前面所述启用。
 
-If this still doesn't work, you may have encountered a bug. Please report this issue on our [GitHub issue tracker](https://github.com/Regalis11/Barotrauma/issues), along with any information you can give us, such as console errors and mod files that refuse to transfer correctly.
+如果这仍然不起作用，则可能遇到了错误。请在我们的 [GitHub 问题跟踪器](https://github.com/Regalis11/Barotrauma/issues)上报告此问题，以及您可以提供给我们的任何信息，例如控制台错误和拒绝正确传输的模组文件。
 
-## I made a mod before v0.17 and I'm unsure of how to publish changes now
-To edit a mod you've published in a previous version of the game, follow these steps:
-- If needed, create a local copy of your existing mod by going into the Publish tab and selecting your mod
-- Edit the copy of your mod in the `LocalMods` folder, which can be accessed by clicking on the pencil icon next to your local copy in the `Installed Mods` list.
-- Once you're done making changes to that copy of the mod, go back into the Publish tab and submit it.
+## 我在 v0.17 之前制作了一个 mod，但我不确定现在如何发布更改
+要编辑您在游戏的早期版本中发布的模组，请按照以下步骤操作：
+-如果需要，请创建现有模组的本地副本，方法是进入“发布”选项卡并选择您的模组
+-在“LocalMods”文件夹中编辑模组的副本，可以通过单击“已安装的模组”列表中本地副本旁边的铅笔图标来访问该文件夹。
+-完成对该模组副本的更改后，请返回“发布”选项卡并提交。
 
-This is, admittedly, fairly unintuitive. This is subject to change in future updates.
+诚然，这是相当不直观的。这在将来的更新中可能会有所更改。
 
-## A mod I used to be able to play with now refuses to be enabled
-It's likely that this mod has some sort of error in its XML that is making it unable to function properly; the game now disables mods with such errors to prevent obscure problems further down the road. If you're the develop of this mod, you may need to edit it to correct these errors. It's also entirely possible that you've encountered a bug with the game, so if you suspect that this is the case, let us know by [submitting a detailed report on our issue tracker](https://github.com/Regalis11/Barotrauma/issues)!
+## 我曾经可以玩的mod现在拒绝启用
+这个mod很可能在其XML中存在某种错误，使其无法正常运行;游戏现在禁用具有此类错误的MOD，以防止进一步出现晦涩难懂的问题。如果您是此MOD的开发者，则可能需要对其进行编辑以更正这些错误。您也完全有可能在游戏中遇到了错误，因此，如果您怀疑是这种情况，请通过[在我们的问题跟踪器上提交详细报告](https://github.com/Regalis11/Barotrauma/issues)来告知我们！
 
-If the error you see is "Failed to add the prefab X from MyMod: a prefab with the same identifier from OtherMod already exists; try overriding": This occurs when two prefabs with the same identifier are defined, and neither of them is marked to [override](../Intro/Overrides.md) the other. To solve this, you will either need to change the identifier of the mentioned prefab in your mod, or wrap it in `<override>...</override>` tags.
+如果您看到的错误是"Failed to add the prefab X from MyMod: a prefab with the same identifier from OtherMod already exists; try overriding"：当定义了两个具有相同IDentifie的物品，并且它们都没有标记为 [override](../Intro/Overrides.md) 另一个。要解决此问题，您需要在mod中更改上述物品的IDentifie，或者将其放在“<override>...</override>“tag中。

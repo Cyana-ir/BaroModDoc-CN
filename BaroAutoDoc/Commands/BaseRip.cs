@@ -10,13 +10,15 @@ namespace BaroAutoDoc.Commands;
 
 public class BaseRip : Command
 {
-    public void Invoke(string repoPath = "C:/Users/juanj/Desktop/Repos/Barotrauma-development")
+    public override void Invoke(string[] args)
     {
+        string repoPath = args.Length > 0 ? args[0] : "C:/Users/juanj/Desktop/Repos/Barotrauma-development";
+
         Directory.SetCurrentDirectory(repoPath);
 
         const string srcPathFmt = "Barotrauma/Barotrauma{0}/{0}Source";
         const string contentFilePathFmt = $"{srcPathFmt}/ContentManagement/ContentFile";
-        string[] srcPathParams = {"Shared"};
+        string[] srcPathParams = { "Shared" };
 
         var contentTypeFinder = new ContentTypeFinder();
         foreach (string p in srcPathParams)
@@ -74,7 +76,7 @@ public class BaseRip : Command
             Page markdown = new Page();
             markdown.Title = contentType.Name;
             var relevantFilesSup = new Page.Superscript();
-            relevantFilesSup.Children.Add(new Page.RawText("Relevant files:"));
+            relevantFilesSup.Children.Add(new Page.RawText("相关文件："));
             foreach (var file in contentType.RelevantFiles.Distinct())
             {
                 relevantFilesSup.Children.Add(new Page.Hyperlink(
@@ -86,14 +88,14 @@ public class BaseRip : Command
             markdown.Body.AddNewLine();
 
             markdown.Body.Components.Add(new Page.NewLine());
-            markdown.Body.Components.Add(new Page.InlineMarkdown("*This page was generated automatically.*\n\n"));
+            markdown.Body.Components.Add(new Page.InlineMarkdown("*此页面是自动生成的。*\n\n"));
 
             markdown.Body.Components.Add(new Page.InlineMarkdown(
-                $"- **Required by core package:** {(contentType.RequiredByCorePackage ? "Yes" : "No")}\n"));
+                $"- **需要核心包：** {(contentType.RequiredByCorePackage ? "√" : "×")}\n"));
             if (contentType.AltNames is { Length: > 0 } altNames)
             {
                 markdown.Body.Components.Add(
-                    new Page.InlineMarkdown($"- **Alternate names:** {string.Join(", ", altNames)}\n"));
+                    new Page.InlineMarkdown($"- **别名：** {string.Join(", ", altNames)}\n"));
             }
 
             markdown.Body.AddNewLine();
@@ -101,14 +103,14 @@ public class BaseRip : Command
             if (contentType.IsSubmarineType)
             {
                 markdown.Body.Components.Add(
-                    new Page.InlineMarkdown("This content type is created in the submarine editor."));
+                    new Page.InlineMarkdown("此内容类型是在潜艇编辑器中创建的。"));
             }
             else
             {
                 if (contentType.XmlSubElements.Any())
                 {
                     var childElementsSection = new Page.Section();
-                    childElementsSection.Title = "Child elements";
+                    childElementsSection.Title = "子元素";
                     markdown.Subsections.Add(childElementsSection);
 
                     var elemList = new Page.BulletList();
@@ -121,7 +123,7 @@ public class BaseRip : Command
                 if (contentType.XmlAttributes.Any())
                 {
                     var attributesSection = new Page.Section();
-                    attributesSection.Title = "Attributes";
+                    attributesSection.Title = "属性";
                     markdown.Subsections.Add(attributesSection);
 
                     var attrList = new Page.BulletList();
