@@ -1,18 +1,18 @@
 # DelayComponent
 
 
-## 属性
+## Attributes
 
-| 属性|类型|默认值|描述 |
+| Attribute|Type|Default value|Description |
 | ---|---|---|--- |
-| Delay|float|1.0|项目延迟信号多长时间（以秒为单位）. |
-| ResetWhenSignalReceived|bool|false|当接收到新信号时，组件是否应丢弃先前接收到的信号. |
-| ResetWhenDifferentSignalReceived|bool|false|当输入信号改变时，组件是否应该丢弃先前接收到的信号. |
+| Delay|float|1.0|How long the item delays the signals (in seconds). |
+| ResetWhenSignalReceived|bool|false|Should the component discard previously received signals when a new one is received. |
+| ResetWhenDifferentSignalReceived|bool|false|Should the component discard previously received signals when the incoming signal changes. |
 
-此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
+This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
 
 
-## 例子
+## Example
 ```xml
 <Item identifier="delaycomponent" category="Electrical" Tags="smallitem,logic" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
   <DelayComponent canbeselected="true" />

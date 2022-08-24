@@ -1,17 +1,17 @@
 # CustomInterface
 
 
-## 属性
+## Attributes
 
-| 属性|类型|默认值|描述 |
+| Attribute|Type|Default value|Description |
 | ---|---|---|--- |
-| Labels|string|""|按钮/复选框上显示的文本，以逗号分隔. |
-| Signals|string|""|按下按钮或选中复选框时发送的信号，以逗号分隔. |
+| Labels|string|""|The texts displayed on the buttons/tickboxes, separated by commas. |
+| Signals|string|""|The signals sent when the buttons are pressed or the tickboxes checked, separated by commas. |
 
-此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
+This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
 
 
-## 例子
+## Example
 ```xml
 <Item identifier="shuttlenavterminal" tags="command,navterminal,secondarynavterminal" linkable="true" allowedlinks="statusmonitor" category="Machine" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
   <CustomInterface canbeselected="true" allowuioverlap="true">

@@ -1,17 +1,17 @@
 # Deconstructor
 
 
-## 属性
+## Attributes
 
-| 属性|类型|默认值|描述 |
+| Attribute|Type|Default value|Description |
 | ---|---|---|--- |
 | DeconstructItemsSimultaneously|bool|false| |
 | DeconstructionSpeed|float|1.0| |
 
-此组件还支持以下位置定义的属性: [Powered](Powered.md), [ItemComponent](ItemComponent.md)
+This component also supports the attributes defined in: [Powered](Powered.md), [ItemComponent](ItemComponent.md)
 
 
-## 例子
+## Example
 ```xml
 <Item identifier="deconstructor" tags="deconstructor,donttakeitems" category="Machine" linkable="true" allowedlinks="fabricator,medicalfabricator,locker" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
   <Deconstructor canbeselected="true" powerconsumption="500.0" msg="ItemMsgInteractSelect">

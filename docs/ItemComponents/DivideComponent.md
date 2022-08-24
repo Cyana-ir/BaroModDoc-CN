@@ -1,18 +1,18 @@
 # DivideComponent
 
 
-## 属性
+## Attributes
 
-| 属性|类型|默认值|描述 |
+| Attribute|Type|Default value|Description |
 | ---|---|---|--- |
-| ClampMax|float|999999.0|组件的输出被限制在此值以下. |
-| ClampMin|float|-999999.0|组件的输出被限制在这个值之上. |
-| TimeFrame|float|0.0|组件必须在此时间范围内接收到两个输入的信号才能输出结果. 如果设置为 0，则必须同时接收输入. |
+| ClampMax|float|999999.0|The output of the item is restricted below this value. |
+| ClampMin|float|-999999.0|The output of the item is restricted above this value. |
+| TimeFrame|float|0.0|The item must have received signals to both inputs within this timeframe to output the result. If set to 0, the inputs must be received at the same time. |
 
-此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
+This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
 
 
-## 例子
+## Example
 ```xml
 <Item identifier="dividecomponent" category="Electrical" Tags="smallitem,logic" maxstacksize="8" linkable="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
   <DivideComponent canbeselected="true" />

@@ -66,25 +66,34 @@ hull用来区分舱室空间，**gaps**（通道)则连接舱室，gap允许水�
 
 
 ## Wiring  接线
-A good number of devices in a submarine have to be wired into a power source to be powered, while others rely on specific signals, also delivered via wiring, to work in the way they’re intended. Entering the wiring mode in the sub editor allows you to run wires between devices like you would in\-game. When wiring mode is toggled on, a selection of differently colored wires appears on the left hand side. Color differences are purely cosmetic, but there is a tradition of using red wires for power and blue for signals.
+<!-- A good number of devices in a submarine have to be wired into a power source to be powered, while others rely on specific signals, also delivered via wiring, to work in the way they’re intended. Entering the wiring mode in the sub editor allows you to run wires between devices like you would in\-game. When wiring mode is toggled on, a selection of differently colored wires appears on the left hand side. Color differences are purely cosmetic, but there is a tradition of using red wires for power and blue for signals.-->
+潜艇中大量的设备都需要为其接通电源供能才能工作，而其余的也依靠线路运输的特殊信号实现预定的功能。进入潜艇的接线模式能使你可以像在游戏中那样布线。当你打开接线模式，你可以在左边看到不同颜色的导线以供选择。虽然导线颜色只起到个性化的作用，但默认是欧阳那个红色的线走电，蓝色的线走信号。  
 
-After selecting a wire, it is added to your inventory and equipped, along with a screwdriver. From here, wiring works like it does in\-game. With the wire equipped, open the item’s wiring interface \(default ‘E’\) to add connections. Please refer to the in\-game Engineer training for more details.
+<!-- After selecting a wire, it is added to your inventory and equipped, along with a screwdriver. From here, wiring works like it does in\-game. With the wire equipped, open the item’s wiring interface \(default ‘E’\) to add connections. Please refer to the in\-game Engineer training for more details.-->  
+再选好导线后，其被加入你的物品列表并装备上，与螺丝刀一起。从这之后，接线的工作就像游戏里面那样。当导线装备好时，打开要接线物品的接线交互页面（默认对其按e键）来创造连接。详情请参考游戏中的电工教学。  
 
-When a wire is placed, it can be selected by clicking on it in wiring mode. Add a node by CTRL+clicking on the length of a wire. Move points by left\-clicking and dragging.
+<!-- When a wire is placed, it can be selected by clicking on it in wiring mode. Add a node by CTRL+clicking on the length of a wire. Move points by left\-clicking and dragging. -->  
+当线接好后，可以在接线模式中点击选中，通过 ctrl+点击 导线上的一部分可以创造一个节点。而左键点击节点可以拖拽节点。  
 
 
-## Nuclear reactor and power grid
-The **nuclear reactor** is the source of almost all the power on board the submarine. It is the engineers' responsibility to keep reactors running, so each reactor in the sub should be assigned an engineer. In most cases, having one is enough. They have a tendency to overheat and eventually explode if not operated correctly, so place them a safe distance away from other vital devices.
+## Nuclear reactor and power grid  核反应堆与电网
+<!-- The **nuclear reactor** is the source of almost all the power on board the submarine. It is the engineers' responsibility to keep reactors running, so each reactor in the sub should be assigned an engineer. In most cases, having one is enough. They have a tendency to overheat and eventually explode if not operated correctly, so place them a safe distance away from other vital devices. -->  **核反应堆** 是潜艇上几乎所有电力的源头。工程师（电工）的职责便是保证其运行。所以每个潜艇中的反应堆都应该有i个电工专门负责。在大多情况系，一个燃料棒就足够了。如果操作不当，反应堆便有过热的趋势最终导致爆炸，所以其应离那些与船员性命攸关的设备保持安全距离。  
 
-Power is distributed through the sub via **junction boxes** , as devices cannot draw power straight from the reactor. Power wires need to be connected to junction boxes to calculate the grid’s power load correctly.
+<!-- Power is distributed through the sub via **junction boxes** , as devices cannot draw power straight from the reactor. Power wires need to be connected to junction boxes to calculate the grid’s power load correctly. -->  
+电力在潜艇中通过接线盒分配，因为设备不能直接从反应堆获得能源。通过将电线与接线盒连接才能正确计算出电网的电力负载。  
 
-There are two major ways to wire power in a sub.
+<!-- There are two major ways to wire power in a sub.  
 - Place junction boxes in each room, close to devices they're providing power to, or
-- Group all junction boxes in a separate electrical room, where they can all be easily accessed.
+- Group all junction boxes in a separate electrical room, where they can all be easily accessed. -->  
+这里有两种主流的接电线的方式：  
+- 在每个房间中都配置接线盒，靠近用电器。  
+- 将所有接线盒集中在接线盒室以方便检修。  
 
-The first solution makes troubleshooting easier, because problems can usually be traced to the closest junction box. On the other hand, grouping all junction boxes together makes them easier to maintain.
+<!-- The first solution makes troubleshooting easier, because problems can usually be traced to the closest junction box. On the other hand, grouping all junction boxes together makes them easier to maintain. -->  
+第一种方式方便检修设备故障，因为你可以很容易追溯到其最近的接线盒。而第二种则主要室方便维护接线盒。  
 
-**TIP:** In most cases, it’s smart to keep everything in the same grid because the reactor always outputs the same amount of power to each grid. If there are two power grids with different loads, the one with the lower load will be overloaded and its junction boxes damaged. If you want to use multiple power grids, make sure their power requirements are balanced.
+<!-- **TIP:** In most cases, it’s smart to keep everything in the same grid because the reactor always outputs the same amount of power to each grid. If there are two power grids with different loads, the one with the lower load will be overloaded and its junction boxes damaged. If you want to use multiple power grids, make sure their power requirements are balanced. -->  
+**提示:** 在大多数情况下，所有设备使用一套电网是较为明智的。
 
 **TIP:** Install wires along walls and ceilings and use cable holders. It looks neater and more organized.
 

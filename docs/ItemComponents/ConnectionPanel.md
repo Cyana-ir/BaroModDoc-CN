@@ -1,16 +1,16 @@
-# connectionPanel
+# ConnectionPanel
 
 
-## 属性
+## Attributes
 
-| 属性|类型|默认值|描述 |
+| Attribute|Type|Default value|Description |
 | ---|---|---|--- |
-| Locked|bool|false|锁定的连接面板无法在游戏中重新接线. |
+| Locked|bool|false|Locked connection panels cannot be rewired in-game. |
 
-此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
+This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
 
 
-## 例子
+## Example
 ```xml
 <Item identifier="button" category="Electrical" tags="smallitem,button" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="8">
   <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">

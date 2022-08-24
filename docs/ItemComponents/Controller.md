@@ -1,20 +1,20 @@
 # Controller
 
 
-## 属性
+## Attributes
 
-| 属性|类型|默认值|描述 |
+| Attribute|Type|Default value|Description |
 | ---|---|---|--- |
-| IsToggle|bool|false|启用后，该项目将连续发出一个 0/1 信号并与之交互将翻转信号（使该项目表现得像一个开关）。 禁用时，与该项目交互时将简单地发送 1. |
-| State|bool|false|项目是否打开/关闭。 仅当 IsToggle 设置为 true 时才有效. |
-| HideHUD|bool|true|选择此项目时是否应隐藏 HUD（库存、健康栏等）. |
-| UsableIn|UseEnvironment|UseEnvironment.Both|可以在空中、水下还是两者都选择该项目. |
-| DrawUserBehind|bool|false|是否应该将使用该物品的角色绘制在该物品的后面. |
+| IsToggle|bool|false|When enabled, the item will continuously send out a 0/1 signal and interacting with it will flip the signal (making the item behave like a switch). When disabled, the item will simply send out 1 when interacted with. |
+| State|bool|false|Whether the item is toggled on/off. Only valid if IsToggle is set to true. |
+| HideHUD|bool|true|Should the HUD (inventory, health bar, etc) be hidden when this item is selected. |
+| UsableIn|UseEnvironment|UseEnvironment.Both|Can the item be selected in air, underwater or both. |
+| DrawUserBehind|bool|false|Should the character using the item be drawn behind the item. |
 
-此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
+This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
 
 
-## 例子
+## Example
 ```xml
 <Item identifier="periscope" tags="periscope" category="Machine,Weapon" type="Controller" disableitemusagewhenselected="true" scale="0.5" isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false">
   <Controller UserPos="-35.0, -50.0" direction="Right" canbeselected="true" msg="ItemMsgInteractSelect">
