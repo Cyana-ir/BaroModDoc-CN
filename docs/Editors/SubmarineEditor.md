@@ -6,60 +6,60 @@ has_toc: true
 ## 各位潜艇作者，大家好!
 *原内容由TorpedoMike, Chad Husk and Hexcode Guy编写*
 
-<div style="display:none">This is the Barotrauma dev team's official manual for building your own fleets. It's the second version, updated to include the various changes to the editor, especially the reworked character mode. This guide will hopefully help you get a handle on the most important aspects of sub building by introducing the key concepts and functions of the submarine editor.</div>  
+<!--This is the Barotrauma dev team's official manual for building your own fleets. It's the second version, updated to include the various changes to the editor, especially the reworked character mode. This guide will hopefully help you get a handle on the most important aspects of sub building by introducing the key concepts and functions of the submarine editor.-->  
 本指南由潜渊症官方开发团队编写，旨在帮助各位建造自己的潜艇。作为第二版，更新了对于编辑器的各种修改，尤其是重做后的角色模式。指南将通过介绍潜艇编辑器中关键的概念、功能以期您能理解潜艇制造中各个重要部分。  
  
-<div style="display:none">**TIP:** Up\-and\-coming sub designers can find some dev\-made examples [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2218926158) about how to setup the most essential systems of any submarine in the editor.</div>  
+<!--**TIP:** Up\-and\-coming sub designers can find some dev\-made examples [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2218926158) about how to setup the most essential systems of any submarine in the editor.-->  
 **提示：** 期望进步的潜艇作者们可以在 [这里](https://steamcommunity.com/sharedfiles/filedetails/?id=2218926158) 找到一些由开发者制作的一些关于如何在编辑器中建立潜艇的必要系统的实例。  
 
 
 ## 潜艇结构（Submarine structures）  
-<div style="display:none">Different kinds of walls and platforms are used to keep oxygen inside and monsters outside, and to divide the interior space into smaller rooms and compartments.</div>  
+<!--Different kinds of walls and platforms are used to keep oxygen inside and monsters outside, and to divide the interior space into smaller rooms and compartments.-->   
 各种各样的墙体和平台是用于保持氧气在艇内，怪物在艇外，并将船内的空间分割为小房间和舱室。  
   
 
-<div style="display:none">When making a new submarine, it’s always a good idea to have a general plan of its shape and layout before building the outer hull. It’s a lot easier to add room inside for that oxygen generator you forgot to include, at first, if you don’t have to move all those carefully placed shell pieces, fins and lights just to create a bit more space. So starting with the outside hull is not necessarily the best course of action.</div>  
+<!--When making a new submarine, it’s always a good idea to have a general plan of its shape and layout before building the outer hull. It’s a lot easier to add room inside for that oxygen generator you forgot to include, at first, if you don’t have to move all those carefully placed shell pieces, fins and lights just to create a bit more space. So starting with the outside hull is not necessarily the best course of action.-->  
 当制作一个新潜艇的时候，最好在制作各个舱室（hull)前对于潜艇的形状和舱室规划有一个大概规划。想想看，如果你不必去动哪些你之前精心排布号的船壳、鳍板和灯光组件以求扩大那一点空间，那么为你一开始忘记计入的制氧机去增加其需要的空间就简单不少了。因而从外侧舱室开始建造潜艇并不一定是最好的方案
   
 
 ![](img_SubmarineEditor/SubmarineStructures.png)
 
-<div style="display:none">Outside walls are by default sturdier than inside walls. Shuttle wall pieces are somewhere in between. You can edit the "max health" for each wall piece individually. This value is used as the base health for the walls, boosted multiplicatively by the hull upgrades the player can buy.</div>  
+<!--Outside walls are by default sturdier than inside walls. Shuttle wall pieces are somewhere in between. You can edit the "max health" for each wall piece individually. This value is used as the base health for the walls, boosted multiplicatively by the hull upgrades the player can buy.-->  
 外壳（outside walls)往往默认比内墙更坚固，而穿梭艇外壳则介于两者之间。您可以对每一段壳体都分别独立修改“最大生命值”（max health)作为其基础生命值，可以通过游戏中的船壳升级继续提升。  
 
-<div style="display:none">We suggest using the walls as labeled for a more balanced experience, but of course it’s not mandatory. Best results often come when experimenting with different options.</div>  
+<!--We suggest using the walls as labeled for a more balanced experience, but of course it’s not mandatory. Best results often come when experimenting with different options.-->  
 我们推荐您使用带有标签的墙体以获得的更平衡的体验，但并不强求。最好的成功往往来自于对各种不同选项的尝试。  
 
-<div style="display:none">After a piece of a wall \(or most things in the editor, really\) is placed, it can be **flipped** by it’s x\- or y\-axis by selecting it and pressing ‘Mirror X’ and ‘Mirror Y’ \-buttons or CTRL+N or CTRL+M. Nudge it via the arrow keys.</div>  
+<!-- After a piece of a wall \(or most things in the editor, really\) is placed, it can be **flipped** by it’s x\- or y\-axis by selecting it and pressing ‘Mirror X’ and ‘Mirror Y’ \-buttons or CTRL+N or CTRL+M. Nudge it via the arrow keys.-->  
 在一段墙体（或者说大部分编辑器里的东西）被放置后，可以通过选中再按 ‘Mirror X'(水平翻转）或 'Mirror Y'(垂直翻转）和 CTRL+N 或 CTRL+M 实现x轴或y轴的**翻转**  
 
 
-<div style="display:none">**TIP:** If you’re feeling lost or need inspiration, open one of the ready\-made submarines in the editor and take a look at how they’re built.</div>  
+<!-- **TIP:** If you’re feeling lost or need inspiration, open one of the ready\-made submarines in the editor and take a look at how they’re built.-->  
 **提示：**当你觉得缺乏或需要一点灵感的时候，可以打开编辑器中已经造好的潜艇来看看它们是如何被创造的。  
 
 
-<div style="display:none">**TIP:** Tall subs tend to be less usable than long subs, and can look a little weird and off balance when in play. Crew should probably not need to climb up 5 stories of ladders to get to a leak or a fire.</div>  
-**提示：** 竖直方向高的潜艇往往再使用方面不如水平方向长的潜艇，而且看起来也会有点奇怪且在游戏中失衡。船员应该尽可能减少需要爬五层的梯子。  
+<!-- **TIP:** Tall subs tend to be less usable than long subs, and can look a little weird and off balance when in play. Crew should probably not need to climb up 5 stories of ladders to get to a leak or a fire.-->  
+**提示：** 竖直方向高的潜艇往往再使用方面不如水平方向长的潜艇，而且看起来也会有点奇怪且在游戏中失衡。船员应该尽可能减少需要爬五层的梯子才能去修补漏洞或者灭火的情况。  
 
 
 ## Hulls and gaps 舱室和通道
 > 译者注：这一段内容因为hull和gap在编辑器中默认没有翻译，所以在文本中的hull和gap都会保留，部分情况下会补充中文方便理解句子的含义  
 
-<div style="display:none">Rooms inside subs in Barotrauma are defined by **hull** objects. If there are no hulls in the sub, there is nothing separating the sub from the water outside. Hulls also determine the overall size \(= volume and mass\) of the sub. </div>   
+<!-- >Rooms inside subs in Barotrauma are defined by **hull** objects. If there are no hulls in the sub, there is nothing separating the sub from the water outside. Hulls also determine the overall size \(= volume and mass\) of the sub. -->  
 在潜渊症中，潜艇内的各个舱室是由名为 **hull**（舱室）的物件定义的。潜艇内部如果没有hull,那便不能区分出潜艇和外部的水。hull的大小数量也决定了潜艇整体规模（等同于体积和质量）。  
 
-<div style="display:none">Hulls are displayed in the sub’s status monitor. Along with a room’s name, the monitor is capable of displaying the water level and quality of oxygen in a room. You can change what information is shown and if any sensors are required by modifying the status monitor.</div>  
+<!-- Hulls are displayed in the sub’s status monitor. Along with a room’s name, the monitor is capable of displaying the water level and quality of oxygen in a room. You can change what information is shown and if any sensors are required by modifying the status monitor.-->  
 hull(舱室）会在潜艇的状态监视器中显示。除开房间名字以外，监视器还能显示各个hull中的水位、氧气含量。通过修改状态监视器组件，你可以改变其显示的信息与所需的检测器。
 
 ![](img_SubmarineEditor/Status_Monitor.png)
 
-<div style="display:none">In non\-rectangular rooms, it’s often necessary to use multiple hull objects to cover the whole area. Link hulls together by selecting one hull, then holding space and clicking on another. This way linked hulls are displayed as a one, larger set. It also helps AI characters perceive linked hulls as a single room.</div>  
+<!-- In non\-rectangular rooms, it’s often necessary to use multiple hull objects to cover the whole area. Link hulls together by selecting one hull, then holding space and clicking on another. This way linked hulls are displayed as a one, larger set. It also helps AI characters perceive linked hulls as a single room.-->  
 对于不方正的舱室，就需要用多个hull来覆盖整个想要的区域。通过选中一个hull在按住空格点击另一个hull使两个hull连接，这样的两个hull就会被视为一个大整体。这个操作通用能让ai将其识别为一个舱室。  
 
-<div style="display:none">**TIP** : Hulls can be named in the editor. The main purpose this serves is to provide an easy, customizable way to refer to different spaces. In some cases the AI also uses hull names to navigate, and, for example, bots prefer to use hulls with ‘airlock’ in their name when entering/exiting the submarine.</div>  
+<!-- **TIP** : Hulls can be named in the editor. The main purpose this serves is to provide an easy, customizable way to refer to different spaces. In some cases the AI also uses hull names to navigate, and, for example, bots prefer to use hulls with ‘airlock’ in their name when entering/exiting the submarine.-->  
 **提示**：可以在编辑器中对hull命名。其旨在提供一个简单而可定制的方式去描述不同的舱室空间。有时，ai也会使用hull名字来寻址，比如ai更倾向于使用带有‘气闸’（airlock)名字的hull进出潜艇。  
 
-<div style="display:none">Where hulls separate spaces, **gaps** connect them, allowing water and oxygen to flow from hull to another. Gap objects are placed automatically between hulls when a door or hatch is placed. For neighboring hulls with no walls, doors or hatches between them, a gap has to be placed manually for the water and oxygen to flow between the hulls. In the editor, red color means that a gap is currently closed, while blue means it is open \(you may need to reopen the editor for the colors to update\).</div>  
+<!-- Where hulls separate spaces, **gaps** connect them, allowing water and oxygen to flow from hull to another. Gap objects are placed automatically between hulls when a door or hatch is placed. For neighboring hulls with no walls, doors or hatches between them, a gap has to be placed manually for the water and oxygen to flow between the hulls. In the editor, red color means that a gap is currently closed, while blue means it is open \(you may need to reopen the editor for the colors to update\).-->  
 hull用来区分舱室空间，**gaps**（通道)则连接舱室，gap允许水和氧气在在hull间流通。当你放置一扇门或者一个对接舱口时，gap就会自然生成在hull之间。但如果相邻的hull没有墙体、门、对接舱口，则需要手动放置一个gap使得水和氧气能够在hull间流通。在编辑器中，gap的红色意味着其目前是封闭的，而蓝色代表其为打开的。（您可能需要重新打开编辑器才能正确更新gap的颜色）  
 
 ![](img_SubmarineEditor/Hulls_and_gaps.png)
