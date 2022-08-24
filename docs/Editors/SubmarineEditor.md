@@ -35,29 +35,37 @@ has_toc: true
 
 
 <div style="display:none">**TIP:** If you’re feeling lost or need inspiration, open one of the ready\-made submarines in the editor and take a look at how they’re built.</div>  
-**提示：**如果你觉得丧失或需要一点灵感，你可以打开编辑器中已经造好
+**提示：**当你觉得缺乏或需要一点灵感的时候，可以打开编辑器中已经造好的潜艇来看看它们是如何被创造的。  
 
 
-**TIP:** Tall subs tend to be less usable than long subs, and can look a little weird and off balance when in play. Crew should probably not need to climb up 5 stories of ladders to get to a leak or a fire.
+<div style="display:none">**TIP:** Tall subs tend to be less usable than long subs, and can look a little weird and off balance when in play. Crew should probably not need to climb up 5 stories of ladders to get to a leak or a fire.</div>  
+**提示：** 竖直方向高的潜艇往往再使用方面不如水平方向长的潜艇，而且看起来也会有点奇怪且在游戏中失衡。船员应该尽可能减少需要爬五层的梯子。  
 
 
-## Hulls and gaps
-Rooms inside subs in Barotrauma are defined by **hull** objects. If there are no hulls in the sub, there is nothing separating the sub from the water outside. Hulls also determine the overall size \(= volume and mass\) of the sub.
+## Hulls and gaps 舱室和通道
+> 译者注：这一段内容因为hull和gap在编辑器中默认没有翻译，所以在文本中的hull和gap都会保留，部分情况下会补充中文方便理解句子的含义  
 
-Hulls are displayed in the sub’s status monitor. Along with a room’s name, the monitor is capable of displaying the water level and quality of oxygen in a room. You can change what information is shown and if any sensors are required by modifying the status monitor.
+<div style="display:none">Rooms inside subs in Barotrauma are defined by **hull** objects. If there are no hulls in the sub, there is nothing separating the sub from the water outside. Hulls also determine the overall size \(= volume and mass\) of the sub. </div>   
+在潜渊症中，潜艇内的各个舱室是由名为 **hull**（舱室）的物件定义的。潜艇内部如果没有hull,那便不能区分出潜艇和外部的水。hull的大小数量也决定了潜艇整体规模（等同于体积和质量）。  
+
+<div style="display:none">Hulls are displayed in the sub’s status monitor. Along with a room’s name, the monitor is capable of displaying the water level and quality of oxygen in a room. You can change what information is shown and if any sensors are required by modifying the status monitor.</div>  
+hull(舱室）会在潜艇的状态监视器中显示。除开房间名字以外，监视器还能显示各个hull中的水位、氧气含量。通过修改状态监视器组件，你可以改变其显示的信息与所需的检测器。
 
 ![](img_SubmarineEditor/Status_Monitor.png)
 
-In non\-rectangular rooms, it’s often necessary to use multiple hull objects to cover the whole area. Link hulls together by selecting one hull, then holding space and clicking on another. This way linked hulls are displayed as a one, larger set. It also helps AI characters perceive linked hulls as a single room.
+<div style="display:none">In non\-rectangular rooms, it’s often necessary to use multiple hull objects to cover the whole area. Link hulls together by selecting one hull, then holding space and clicking on another. This way linked hulls are displayed as a one, larger set. It also helps AI characters perceive linked hulls as a single room.</div>  
+对于不方正的舱室，就需要用多个hull来覆盖整个想要的区域。通过选中一个hull在按住空格点击另一个hull使两个hull连接，这样的两个hull就会被视为一个大整体。这个操作通用能让ai将其识别为一个舱室。  
 
-**TIP** : Hulls can be named in the editor. The main purpose this serves is to provide an easy, customizable way to refer to different spaces. In some cases the AI also uses hull names to navigate, and, for example, bots prefer to use hulls with ‘airlock’ in their name when entering/exiting the submarine.
+<div style="display:none">**TIP** : Hulls can be named in the editor. The main purpose this serves is to provide an easy, customizable way to refer to different spaces. In some cases the AI also uses hull names to navigate, and, for example, bots prefer to use hulls with ‘airlock’ in their name when entering/exiting the submarine.</div>  
+**提示**：可以在编辑器中对hull命名。其旨在提供一个简单而可定制的方式去描述不同的舱室空间。有时，ai也会使用hull名字来寻址，比如ai更倾向于使用带有‘气闸’（airlock)名字的hull进出潜艇。  
 
-Where hulls separate spaces, **gaps** connect them, allowing water and oxygen to flow from hull to another. Gap objects are placed automatically between hulls when a door or hatch is placed. For neighboring hulls with no walls, doors or hatches between them, a gap has to be placed manually for the water and oxygen to flow between the hulls. In the editor, red color means that a gap is currently closed, while blue means it is open \(you may need to reopen the editor for the colors to update\).
+<div style="display:none">Where hulls separate spaces, **gaps** connect them, allowing water and oxygen to flow from hull to another. Gap objects are placed automatically between hulls when a door or hatch is placed. For neighboring hulls with no walls, doors or hatches between them, a gap has to be placed manually for the water and oxygen to flow between the hulls. In the editor, red color means that a gap is currently closed, while blue means it is open \(you may need to reopen the editor for the colors to update\).</div>  
+hull用来区分舱室空间，**gaps**（通道)则连接舱室，gap允许水和氧气在在hull间流通。当你放置一扇门或者一个对接舱口时，gap就会自然生成在hull之间。但如果相邻的hull没有墙体、门、对接舱口，则需要手动放置一个gap使得水和氧气能够在hull间流通。在编辑器中，gap的红色意味着其目前是封闭的，而蓝色代表其为打开的。（您可能需要重新打开编辑器才能正确更新gap的颜色）  
 
 ![](img_SubmarineEditor/Hulls_and_gaps.png)
 
 
-## Wiring
+## Wiring  接线
 A good number of devices in a submarine have to be wired into a power source to be powered, while others rely on specific signals, also delivered via wiring, to work in the way they’re intended. Entering the wiring mode in the sub editor allows you to run wires between devices like you would in\-game. When wiring mode is toggled on, a selection of differently colored wires appears on the left hand side. Color differences are purely cosmetic, but there is a tradition of using red wires for power and blue for signals.
 
 After selecting a wire, it is added to your inventory and equipped, along with a screwdriver. From here, wiring works like it does in\-game. With the wire equipped, open the item’s wiring interface \(default ‘E’\) to add connections. Please refer to the in\-game Engineer training for more details.
