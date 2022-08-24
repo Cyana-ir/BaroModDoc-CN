@@ -1,30 +1,42 @@
 ---
 has_toc: true
 ---
-# Submarine editor
+# 潜艇编辑器（Submarine editor）  
 
-## Hello subwrights!
-*Written by TorpedoMike, Chad Husk and Hexcode Guy*
+## 各位潜艇作者，大家好!
+*原内容由TorpedoMike, Chad Husk and Hexcode Guy编写*
 
-This is the Barotrauma dev team's official manual for building your own fleets. It's the second version, updated to include the various changes to the editor, especially the reworked character mode. This guide will hopefully help you get a handle on the most important aspects of sub building by introducing the key concepts and functions of the submarine editor.
+<div style="display:none">This is the Barotrauma dev team's official manual for building your own fleets. It's the second version, updated to include the various changes to the editor, especially the reworked character mode. This guide will hopefully help you get a handle on the most important aspects of sub building by introducing the key concepts and functions of the submarine editor.</div>  
+本指南由潜渊症官方开发团队编写，旨在帮助各位建造自己的潜艇。作为第二版，更新了对于编辑器的各种修改，尤其是重做后的角色模式。指南将通过介绍潜艇编辑器中关键的概念、功能以期您能理解潜艇制造中各个重要部分。  
+ 
+<div style="display:none">**TIP:** Up\-and\-coming sub designers can find some dev\-made examples [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2218926158) about how to setup the most essential systems of any submarine in the editor.</div>  
+**提示：** 期望进步的潜艇作者们可以在 [这里](https://steamcommunity.com/sharedfiles/filedetails/?id=2218926158) 找到一些由开发者制作的一些关于如何在编辑器中建立潜艇的必要系统的实例。  
 
-**TIP:** Up\-and\-coming sub designers can find some dev\-made examples [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2218926158) about how to setup the most essential systems of any submarine in the editor.
 
+## 潜艇结构（Submarine structures）  
+<div style="display:none">Different kinds of walls and platforms are used to keep oxygen inside and monsters outside, and to divide the interior space into smaller rooms and compartments.</div>  
+各种各样的墙体和平台是用于保持氧气在艇内，怪物在艇外，并将船内的空间分割为小房间和舱室。  
+  
 
-## Submarine structures
-Different kinds of walls and platforms are used to keep oxygen inside and monsters outside, and to divide the interior space into smaller rooms and compartments.
-
-When making a new submarine, it’s always a good idea to have a general plan of its shape and layout before building the outer hull. It’s a lot easier to add room inside for that oxygen generator you forgot to include, at first, if you don’t have to move all those carefully placed shell pieces, fins and lights just to create a bit more space. So starting with the outside hull is not necessarily the best course of action.
+<div style="display:none">When making a new submarine, it’s always a good idea to have a general plan of its shape and layout before building the outer hull. It’s a lot easier to add room inside for that oxygen generator you forgot to include, at first, if you don’t have to move all those carefully placed shell pieces, fins and lights just to create a bit more space. So starting with the outside hull is not necessarily the best course of action.</div>  
+当制作一个新潜艇的时候，最好在制作各个舱室（hull)前对于潜艇的形状和舱室规划有一个大概规划。想想看，如果你不必去动哪些你之前精心排布号的船壳、鳍板和灯光组件以求扩大那一点空间，那么为你一开始忘记计入的制氧机去增加其需要的空间就简单不少了。因而从外侧舱室开始建造潜艇并不一定是最好的方案
+  
 
 ![](img_SubmarineEditor/SubmarineStructures.png)
 
-Outside walls are by default sturdier than inside walls. Shuttle wall pieces are somewhere in between. You can edit the "max health" for each wall piece individually. This value is used as the base health for the walls, boosted multiplicatively by the hull upgrades the player can buy.
+<div style="display:none">Outside walls are by default sturdier than inside walls. Shuttle wall pieces are somewhere in between. You can edit the "max health" for each wall piece individually. This value is used as the base health for the walls, boosted multiplicatively by the hull upgrades the player can buy.</div>  
+外壳（outside walls)往往默认比内墙更坚固，而穿梭艇外壳则介于两者之间。您可以对每一段壳体都分别独立修改“最大生命值”（max health)作为其基础生命值，可以通过游戏中的船壳升级继续提升。  
 
-We suggest using the walls as labeled for a more balanced experience, but of course it’s not mandatory. Best results often come when experimenting with different options.
+<div style="display:none">We suggest using the walls as labeled for a more balanced experience, but of course it’s not mandatory. Best results often come when experimenting with different options.</div>  
+我们推荐您使用带有标签的墙体以获得的更平衡的体验，但并不强求。最好的成功往往来自于对各种不同选项的尝试。  
 
-After a piece of a wall \(or most things in the editor, really\) is placed, it can be **flipped** by it’s x\- or y\-axis by selecting it and pressing ‘Mirror X’ and ‘Mirror Y’ \-buttons or CTRL+N or CTRL+M. Nudge it via the arrow keys.
+<div style="display:none">After a piece of a wall \(or most things in the editor, really\) is placed, it can be **flipped** by it’s x\- or y\-axis by selecting it and pressing ‘Mirror X’ and ‘Mirror Y’ \-buttons or CTRL+N or CTRL+M. Nudge it via the arrow keys.</div>  
+在一段墙体（或者说大部分编辑器里的东西）被放置后，可以通过选中再按 ‘Mirror X'(水平翻转）或 'Mirror Y'(垂直翻转）和 CTRL+N 或 CTRL+M 实现x轴或y轴的**翻转**  
 
-**TIP:** If you’re feeling lost or need inspiration, open one of the ready\-made submarines in the editor and take a look at how they’re built.
+
+<div style="display:none">**TIP:** If you’re feeling lost or need inspiration, open one of the ready\-made submarines in the editor and take a look at how they’re built.</div>  
+**提示：**如果你觉得丧失或需要一点灵感，你可以打开编辑器中已经造好
+
 
 **TIP:** Tall subs tend to be less usable than long subs, and can look a little weird and off balance when in play. Crew should probably not need to climb up 5 stories of ladders to get to a leak or a fire.
 
