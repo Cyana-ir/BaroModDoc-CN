@@ -93,15 +93,18 @@ hull用来区分舱室空间，**gaps**（通道)则连接舱室，gap允许水�
 第一种方式方便检修设备故障，因为你可以很容易追溯到其最近的接线盒。而第二种则主要室方便维护接线盒。  
 
 <!-- **TIP:** In most cases, it’s smart to keep everything in the same grid because the reactor always outputs the same amount of power to each grid. If there are two power grids with different loads, the one with the lower load will be overloaded and its junction boxes damaged. If you want to use multiple power grids, make sure their power requirements are balanced. -->  
-**提示:** 在大多数情况下，所有设备使用一套电网是较为明智的。
+**提示:** 在大多数情况下，所有设备使用一套电网是较为明智的。  
 
-**TIP:** Install wires along walls and ceilings and use cable holders. It looks neater and more organized.
+<!-- **TIP:** Install wires along walls and ceilings and use cable holders. It looks neater and more organized. -->  
+**提示:** 沿着墙壁和舱室顶接线并使用走线槽（cable holder)可以让线路看起来更整洁有序。  
 
 
-## Engines, ballast and navigation
-**Engines** provide thrust. You must place the engine so that its back half is in water and the front half inside the sub, or it will be damaged by water. You can use multiple engines to apply more force, but keep in mind their power consumption, which can be high and fluctuate when changing direction sharply.
+## Engines, ballast and navigation 引擎、压载舱与导航终端
+<!-- **Engines** provide thrust. You must place the engine so that its back half is in water and the front half inside the sub, or it will be damaged by water. You can use multiple engines to apply more force, but keep in mind their power consumption, which can be high and fluctuate when changing direction sharply. -->  
+**引擎**能提供推力，而您务必将引擎的后半段放置于舱外，前半段放置于舱内，否则其可能会侵水受损。你可以用更多引擎来增强推力，但您需要注意他们的电力消耗，在快速改变速度方向时可能将导致其电力需求大幅波动。  
 
-An engine’s maximum force can be adjusted in the editor. This is useful if the sub’s horizontal movement can’t keep up with its ascent/descent speed or vice versa, which makes steering very difficult \(and can and will result from the engines and ballasts being out of balance\).
+<!-- An engine’s maximum force can be adjusted in the editor. This is useful if the sub’s horizontal movement can’t keep up with its ascent/descent speed or vice versa, which makes steering very difficult \(and can and will result from the engines and ballasts being out of balance\). -->  
+在编辑器中可以调整引擎的最大推力。其将有效改善潜艇水平运动跟不上或者远超竖直上升\下降速度导致难以驾驶 \(并将会导致引擎和压载舱失衡\)的情况。  
 
 ![](img_SubmarineEditor/Maximum_force.png)
 
