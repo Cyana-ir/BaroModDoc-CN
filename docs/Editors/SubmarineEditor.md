@@ -108,35 +108,44 @@ hull用来区分舱室空间，**gaps**（通道)则连接舱室，gap允许水�
 
 ![](img_SubmarineEditor/Maximum_force.png)
 
-Where engines provide horizontal movement, **ballast tanks** are responsible for vertical movement. In their simplest state, they are empty rooms that contain a water pump. The pump is programmed to let water in to make the sub heavier or pump it out to make it lighter. This results in the sub either ascending or descending.
+<!-- Where engines provide horizontal movement, **ballast tanks** are responsible for vertical movement. In their simplest state, they are empty rooms that contain a water pump. The pump is programmed to let water in to make the sub heavier or pump it out to make it lighter. This results in the sub either ascending or descending. -->  
+引擎负责水平运动，而**压载舱**负责竖直方向运动。在最简单的情形下，压载舱就是空舱室配上一个水泵。水泵被设计为吸水使潜艇变重；排水使潜艇变轻，最终导致潜艇的下降或上升。  
 
 ![](img_SubmarineEditor/Ballast_pump.png)
 
-**TIP:** There can be any number of ballast tanks, although an optimal number is two or even three. One ballast can be fine, but then you run the risk of the sub being completely immobile if it gets punctured.
+<!-- **TIP:** There can be any number of ballast tanks, although an optimal number is two or even three. One ballast can be fine, but then you run the risk of the sub being completely immobile if it gets punctured. -->  
+**提示:** 潜艇中允许任意数量的压载舱，但一般最适宜的数量时两到三个。只有一个压载舱也行，但这面临着当其受损潜艇将完全不可移动的风险。  
 
-**TIP:** A natural place for a ballast tank would be on the bottom. Otherwise you will run into all kinds of issues ranging from leaks to maintenance problems.
+<!-- **TIP:** A natural place for a ballast tank would be on the bottom. Otherwise you will run into all kinds of issues ranging from leaks to maintenance problems. -->  
+**提示:** 压载舱一般放在潜艇底部，否则你可能与遇到从漏水到维护的各种问题。
 
 ![](img_SubmarineEditor/Hull_volume.png)
 
-The size of a ballast tank is an important factor in a sub’s handling. If it’s too small, the sub may not be able to descend; too big, and it may sink too easily. Aim for a combined neutral ballast level of .5 for optimal size. The size of a hull is shown in the upper left corner of the viewport when a hull is selected. Selecting multiple hulls will give their combined optimal neutral ballast level. Neutral ballast levels that differ from the standard .5 can be taken into account in the navigation terminal. Look for a ‘Neutral Ballast Level’ field and change it to whatever is suitable.
+<!-- The size of a ballast tank is an important factor in a sub’s handling. If it’s too small, the sub may not be able to descend; too big, and it may sink too easily. Aim for a combined neutral ballast level of .5 for optimal size. The size of a hull is shown in the upper left corner of the viewport when a hull is selected. Selecting multiple hulls will give their combined optimal neutral ballast level. Neutral ballast levels that differ from the standard .5 can be taken into account in the navigation terminal. Look for a ‘Neutral Ballast Level’ field and change it to whatever is suitable. -->  
+压载舱的规模是潜艇操控性能的一个重要因素。如果太小了，那么潜艇可能无法上浮；如果太大了，那么潜艇可能容易下沉。力求将总**平衡压载舱水位**（neutral ballast level）为0.5是最好的选择。hull的规模可以将在你选中的时候显示在左上角，同时选中多个压载舱将显示他们的平衡总压载舱水位。如果平衡压载舱水位与标准的0.5不同，可以选中导航终端找到“Neutral Ballast Level"，将其修改成与潜艇匹配的数值以消除误差。  
 
-Engines and ballast levels are controlled via the navigation terminal. The terminal parses the direction given by the navigator in the sonar display and sends a signal to the engine \(‘velocity_x_out’ to ‘set_force’\) and ballast pumps \(‘velocity_y_out’ to ‘set_targetlevel’\).
-
+<!-- Engines and ballast levels are controlled via the navigation terminal. The terminal parses the direction given by the navigator in the sonar display and sends a signal to the engine \(‘velocity_x_out’ to ‘set_force’\) and ballast pumps \(‘velocity_y_out’ to ‘set_targetlevel’\). -->  
+引擎和压载舱的水位可以通过导航终端控制。导航终端回解析导航员在声纳显示里选择的方向，并将信号传递给引擎\(从"水平速度输出”到“设置推力”\)
+和水泵\(从“垂直速度输出”到“设置目标水位”\)。  
 ![](img_SubmarineEditor/Navigation_terminal_wiring.png)
 
 
-## Weapons systems
-Turrets are the basic defense measure any standard sub should have. All turrets consists of a gun to launch the projectiles, a loader to load the ammunition, and a periscope to control the gun.
+## Weapons systems 武器系统
+<!-- Turrets are the basic defense measure any standard sub should have. All turrets consists of a gun to launch the projectiles, a loader to load the ammunition, and a periscope to control the gun. -->  
+炮台是任何一个合格的潜艇都应该有的最基本的防御手段。所有炮台都由以下结构组成：一门能发射弹药的炮，一个装填弹药的装弹器，和一个控制炮的潜望镜。  
 
-All turrets use a lot of power in short bursts when they fire. These power spikes are more than regular batteries can handle, which can causes the power grid to fluctuate wildly. Therefore, it's best to use supercapacitors to power the sub's guns. Their capacity is low and the output high.
+<!-- All turrets use a lot of power in short bursts when they fire. These power spikes are more than regular batteries can handle, which can causes the power grid to fluctuate wildly. Therefore, it's best to use supercapacitors to power the sub's guns. Their capacity is low and the output high. -->  
+所有的炮台都会在开火时在瞬间内消耗大量电力。这种突变导致的剧烈电网波动远不是一般的电池能解决的。因此，最好使用超级电容去为潜艇炮台供电，因为它们的容量很小，但是输出很高。  
 
-For any type of turret to work, their loaders must be linked to the gun \(by selecting one, then holding space and clicking on the other\) and a periscope must be placed somewhere to control them. Periscopes output a ‘position_out’ and a ‘trigger_out’ signals, which should be connected to ‘position_in’ and ‘trigger_in’ inputs in the turret itself.
+<!-- For any type of turret to work, their loaders must be linked to the gun \(by selecting one, then holding space and clicking on the other\) and a periscope must be placed somewhere to control them. Periscopes output a ‘position_out’ and a ‘trigger_out’ signals, which should be connected to ‘position_in’ and ‘trigger_in’ inputs in the turret itself. -->  
+无论是哪种炮台，都需要与装弹器连接（通过选中其中一者再按住空格点另一个）在才能发射。同样地，也需要放置一个潜望镜并将其接线———“位置输出”接炮台“位置输入”，“触发输出”接炮台“触发输入”——才能控制炮台。  
 
 ![](img_SubmarineEditor/Submarine_weapons.png)
 
 ![](img_SubmarineEditor/Coilgun_wiring.png)
 
-**Depth charges** require a depth charge loader and a tube. Depth charge loaders should be linked to depth charge tubes on the outer hull. Charges are launched by giving the tube an activation signal, usually via a button.
+<!  **Depth charges** require a depth charge loader and a tube. Depth charge loaders should be linked to depth charge tubes on the outer hull. Charges are launched by giving the tube an activation signal, usually via a button. -->  
+**深水炸弹**需要一个深水炸弹装弹器和一个深水炸弹投放器。装弹器需要和潜艇外部的投放器相连。当给投放器一个激发信号（往往是通过一个按钮)便可以投放炸弹。  
 
 ![](img_SubmarineEditor/Depth_charge_loader.png)
 
