@@ -1,16 +1,16 @@
-# ColorComponent
+# Color组件
 
 
-## Attributes
+## 属性
 
-| Attribute|Type|Default value|Description |
+| 属性|类型|默认值|描述 |
 | ---|---|---|--- |
-| UseHSV|bool|false|When enabled makes the component translate the signal from HSV into RGB where red is the hue between 0 and 360, green is the saturation between 0 and 1 and blue is the value between 0 and 1. |
+| UseHSV|bool|false| 启用后,组件将信号从 HSV 转换为 RGB,其中红色是 0 到 360 之间的色调,绿色是 0 到 1 之间的饱和度，蓝色是 0 到 1 之间的值.|
 
-This component also supports the attributes defined in: [ItemComponent](ItemComponent.md)
+此组件还支持以下位置定义的属性: [ItemComponent](ItemComponent.md)
 
 
-## Example
+## 例子
 ```xml
 <Item identifier="colorcomponent" category="Electrical" Tags="smallitem,logic" maxstacksize="8" linkable="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
   <ColorComponent canbeselected="true" />
