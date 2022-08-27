@@ -130,7 +130,7 @@ hull用来区分舱室空间，**gaps**（通道)则连接舱室，gap允许水�
 ![](img_SubmarineEditor/Navigation_terminal_wiring.png)
 
 
-## Weapons systems 武器系统
+## Weapons systems 武器系统  
 <!-- Turrets are the basic defense measure any standard sub should have. All turrets consists of a gun to launch the projectiles, a loader to load the ammunition, and a periscope to control the gun. -->  
 炮台是任何一个合格的潜艇都应该有的最基本的防御手段。所有炮台都由以下结构组成：一门能发射弹药的炮，一个装填弹药的装弹器，和一个控制炮的潜望镜。  
 
@@ -149,37 +149,45 @@ hull用来区分舱室空间，**gaps**（通道)则连接舱室，gap允许水�
 
 ![](img_SubmarineEditor/Depth_charge_loader.png)
 
-**Electric discharge coils** work similarly to depth charges. They need to be wired into the power grid and given an activation signal. The actual coil is placed on the outer hull. When activated, the coil creates an electrical discharge that travels along the submarine’s outer hull and stuns any monsters nearby. The range of the electric shock created is set in the discharge coil item in the editor along with a multiplier when traveling along walls.
+<!-- **Electric discharge coils** work similarly to depth charges. They need to be wired into the power grid and given an activation signal. The actual coil is placed on the outer hull. When activated, the coil creates an electrical discharge that travels along the submarine’s outer hull and stuns any monsters nearby. The range of the electric shock created is set in the discharge coil item in the editor along with a multiplier when traveling along walls. -->  
+**放电线圈**和深水炸弹的工作情形类似，其需要接入电网并给予一个激发信号。实际上线圈位于hull外部，当被激活时，会在前厅外释放电流并击晕其附近的怪物。电击的范围可以在编辑器放电线圈中修改，也可以设置其能沿着船壳传播的距离。  
 
 ![](img_SubmarineEditor/Electric_discharge_coil.png)
 
 
-## Oxygen
-**Oxygen generators** generate oxygen and thus breathable air for the entire sub. Like everything else on board, they require power to function, and they must be linked to an oxygen vent in any hull that is supposed to have breathable air. To link the generator to a vent, select the oxygen generator, then hold space and click the vent. You should see a green line between the items. If not, check if you have ‘Links’ displayed on the left hand side of the screen. If not, check if you have ‘Links’ toggled on in the visibility list.
+## Oxygen  氧气  
+<!-- **Oxygen generators** generate oxygen and thus breathable air for the entire sub. Like everything else on board, they require power to function, and they must be linked to an oxygen vent in any hull that is supposed to have breathable air. To link the generator to a vent, select the oxygen generator, then hold space and click the vent. You should see a green line between the items. If not, check if you have ‘Links’ displayed on the left hand side of the screen. If not, check if you have ‘Links’ toggled on in the visibility list. -->  <!-- 这中间有一句If not, check if you have ‘Links’ displayed on the left hand side of the screen.没能再编辑器中找到对应，不知道如何翻译 -->  
+**制氧机**能生成氧气并供给整个潜艇可呼吸的空气。和潜艇上其他设备一样，制氧机需要电力工作，并且必须要与所有需要有氧气的hull中的通风口连接——按住空格连接制氧机和通风口。连接成功会哦于绿线标明，如果没有，检查你是否打开了再可视性列表中打开了链接。  
 
 ![](img_SubmarineEditor/Oxygen_generator_and_vent.png)
 
-The amount of oxygen needed is based on the hull volume and the size of the crew. Oxygen levels are hull specific, which means the more crew members in a hull, the more quickly its oxygen level is depleted. Oxygen moves between hulls via gaps.
+<!-- The amount of oxygen needed is based on the hull volume and the size of the crew. Oxygen levels are hull specific, which means the more crew members in a hull, the more quickly its oxygen level is depleted. Oxygen moves between hulls via gaps. --> 
+氧气的需求量取决于hull的体积与船员的多少。空气质量等级（氧气含量）是由舱室决定的，这意味着船体中的船员越多，其氧气水平消耗得越快。氧气可以通过gap在hull之间流通。  
 
 
-## Airlock, docking and cargo bay
-Any submarine worth its salt has a way for a person to enter and exit it without excessive flooding. A standard **airlock** has a setup of multiple doors that stop the water before it gets further inside and a water pump to get rid of it once the airlock is closed.
+## Airlock, docking and cargo bay  气闸，对接舱 货舱
+<!-- Any submarine worth its salt has a way for a person to enter and exit it without excessive flooding. A standard **airlock** has a setup of multiple doors that stop the water before it gets further inside and a water pump to get rid of it once the airlock is closed. -->  
+任何一艘值得使用的潜艇都有一条让人进出而不会过度进水的路。 一个标准的**气闸**具备一套设置好的复数门以防止进水，和一个水泵在气闸关闭后排水。  
 
 ![](img_SubmarineEditor/airlock.png)
 
-**Docking ports** are devices that clamp two structures \(submarines, shuttles, outposts etc.\) together, making it possible to walk from one to the other without getting your feet wet. Docking ports act independently from hatches and doors, so remember to also place a hatch wherever a port is to control passage.
+<!-- **Docking ports** are devices that clamp two structures \(submarines, shuttles, outposts etc.\) together, making it possible to walk from one to the other without getting your feet wet. Docking ports act independently from hatches and doors, so remember to also place a hatch wherever a port is to control passage. -->  
+**对接舱**是用于将两个结构（比如潜艇、穿梭艇、前哨站等）固定在一起的设备，并可以作为两者人员直接来往而不用出仓的通道。但对接舱是独立于舱口和门的，所以记得在对接舱控制的通道放舱口。  
 
-**TIP:** A good way to wire a docking port is to link it to its hatch. When the port is engaged, the hatch opens. Find a working example in the sub editor’s Item assemblies category.
+<!-- **TIP:** A good way to wire a docking port is to link it to its hatch. When the port is engaged, the hatch opens. Find a working example in the sub editor’s Item assemblies category. -->  
+**提示** 对接舱接线的一个好办法就是将其接到与其一起的舱门。当对接上时，舱门便会打开。你可以在潜艇编辑器的“组合”分类中找到一个有用的实例。  
 
 
-## Containers
-There are quite a lot of items in the game, which the player can find or buy in the stores. All these items need a place somewhere in the submarine, and for that we need various containers. You can set a container to be filled automatically by enabling the 'Auto Fill' flag for the 'ItemContainer' component. For the autofilling to work, you'll need to mark the container with a tag, so that the game knows what kind of items the container should contain.
+## Containers  容器
+<!-- There are quite a lot of items in the game, which the player can find or buy in the stores. All these items need a place somewhere in the submarine, and for that we need various containers. You can set a container to be filled automatically by enabling the 'Auto Fill' flag for the 'ItemContainer' component. For the autofilling to work, you'll need to mark the container with a tag, so that the game knows what kind of items the container should contain. -->  
+游戏中由非常多可以搜集到或者买到的物品。而这些物品在潜艇中需要有个地方放，因而我们需要各种类型的容器。你可以通过在编辑器的“ItemContainer”组件勾选上“auto fill”选项将容器设置为自动填充。而要使挨冻填充能够工作你需要为容器打上标记（tag)，让游戏指导整个容器中应该放什么。  
 
 ![](img_SubmarineEditor/container.png)
 
-Some tags are defined in the prefab level, in the .xml files. Others need to be manually added in the editor. The important tags that need to be manually added are:
+<!-- Some tags are defined in the prefab level, in the .xml files. Others need to be manually added in the editor. The important tags that need to be manually added are: -->  
+游戏tag是在.xml文件中预设置级中定义的。而其他的则需要你在编辑器中手动添加。比较重要且需要手动添加的tag如下：  
 
-- **engcab**: Tools and other items need for the maintenance tasks.
+<!-- - **engcab**: Tools and other items need for the maintenance tasks.
 - **reactorcab**: Reactor fuel, screwdrivers, and other items that might be needed in the reactor room.
 - **divingcab**: Items needed when you exit the submarine. Plasma cutters, underwater scooters etc.
 - **supplycab**: Emergency items and a diving mask.
@@ -189,73 +197,105 @@ Some tags are defined in the prefab level, in the .xml files. Others need to be 
 - **medfabcab**: Medical ingredients.
 - **toxcab**: Poisons and dangerous substances.
 - **storagecab**: Materials used for fabricating.
-- **mineralcab**: Minerals.
+- **mineralcab**: Minerals.  -->  
 
-**TIP:** You can also reserve the container for specific items only by adding tags or identifiers of those items in the 'Containable Restrictions' field.
+- **engcab**: 维护任务所需的工具和其他物品。  
+- **reactorcab**：反应堆燃料、螺丝刀和反应堆室内可能需要的其他物品。  
+- **divingcab**：离开潜艇时所需的物品。 等离子切割机、水下推进器等。   
+- **supplycab**：应急物品和潜水面罩。  
+- **armcab**：武器和弹药。
+- **secarmcab**：致命武器和爆炸物。  
+- **medcab**：医疗用品  
+- **medfabcab**：医用原材料。  
+- **toxcab**：毒剂和危险物品。  
+- **storagecab**：用于制作的材料。  
+- **mineralcab**：矿物。  
 
-## Equipment and security
-To prevent traitors and other undesirables from causing too much damage, it may be smart to lock weapons and explosives somewhere where only authorized personnel can reach them.
+<!-- **TIP:** You can also reserve the container for specific items only by adding tags or identifiers of those items in the 'Containable Restrictions' field. -->  
+**提示**：你可以通过在“Containable Restrictions”中填写特定物品的tag或者identifier来将容器预备给某种特定的物品。  
 
-To do this, add a tag to the 'picked required' field of a door. Then add the the same tag to at least one of the spawn points. The 'ID Card tags' defined in the spawnpoint are copied for all characters that spawn at that specific point, giving them access to different parts of the submarine.
+## Equipment and security 装备与安全
+<!-- To prevent traitors and other undesirables from causing too much damage, it may be smart to lock weapons and explosives somewhere where only authorized personnel can reach them. -->  
+为了防止叛徒和其他不受欢迎的人造成太大的破坏，把武器和爆炸物锁在只有授权人员才能接触到的地方可能是明智的做法。  
 
-For example: to only allow security officers to open a door, add a tag, e.g. 'id_security', to both the door and to the security officer’s spawn point. The tag can be whatever you define but it has to match in both places.
+<!-- To do this, add a tag to the 'picked required' field of a door. Then add the the same tag to at least one of the spawn points. The 'ID Card tags' defined in the spawnpoint are copied for all characters that spawn at that specific point, giving them access to different parts of the submarine. -->  
+为了达成这个效果，你需要在门的“picked required"属性后面添加tag。然后再将相同的tag添加到至少一个出生点。出生点的“ID Card tags"属性将复制给所有在这个出生点生成的角色，者允许了角色能通过潜艇的各个部分。  
+
+<!-- For example: to only allow security officers to open a door, add a tag, e.g. 'id_security', to both the door and to the security officer’s spawn point. The tag can be whatever you define but it has to match in both places.-->  
+举个例子，为了只允许安全官开某扇门，需要添加一个如“id_security”的tag到门上和安全官的出生点。具体的tag你可以随便写，只要能在两端匹配上。  
 
 ![](img_SubmarineEditor/Security_door_guide.png)
 
-Now anyone who spawns at this spawn point has the tag ‘id_security’ on their ID Card, allowing them to open the door.
+<!-- Now anyone who spawns at this spawn point has the tag ‘id_security’ on their ID Card, allowing them to open the door. -->  
+如图，现在所有在这个出生点生成的角色都有tag‘id_security’在id卡上了，能开图上的门。  
 
-**TIP:** To place items in containers in sub editor, right\-click on the container and select ‘Open’ to open the interface. You can now search and filter items and place them in directly. To delete items from the container, drag and drop them to the entity catalog in the bottom.
+<!-- **TIP:** To place items in containers in sub editor, right\-click on the container and select ‘Open’ to open the interface. You can now search and filter items and place them in directly. To delete items from the container, drag and drop them to the entity catalog in the bottom.  -->  
+<!-- You can now search and filter items and place them in directly. 字面意思是可以直接放东西进去，试了下不能，难以理解 -->  
+**提示**： 编辑器中通过右键容器，选“打开”打开交互界面就可以在容器中放东西了。然可以直接搜索、筛选东西将他们放进去。如果要删除容器中的物品，将里面的东西拖到底部物品列表即可。
 
-**TIP** : The “picked required” field essentially means “the character has to have an item with this name or tag in their inventory to interact with this item/device”. It can be used to restrict access to other items than doors as well, or for example to require a specific tool to interact with some device.
+<!-- **TIP** : The “picked required” field essentially means “the character has to have an item with this name or tag in their inventory to interact with this item/device”. It can be used to restrict access to other items than doors as well, or for example to require a specific tool to interact with some device.-->  
+**提示**：“picked required”选项本质上意味着"角色必须拥有一个与所填内容一致的tag或名称的物品在他们的身上以与设备\物品进行互动"。这也可以用于限制对其他物品的使用权限，或者说用一个特殊的工具才能与某些设备交互。  
 
 
-## Waterproofing
-There are a few ways to combat flooding inside a submarine.
+## Waterproofing 防水  
+<!-- There are a few ways to combat flooding inside a submarine. -->  
+下面是一些对付潜艇内漏水的办法。  
 
-Pumps are the primary way of getting rid of water, but they consume relatively high amounts of power. Having too many pumps turn on simultaneously causes unnecessary power fluctuations. Instead of placing pumps in every room, duct blocks can be used to let water flow into designated bilge compartments. There doesn’t need to be a separate bilge space, usually it is enough to place a pump on the bottom\-most room and route the water there.
+<!-- Pumps are the primary way of getting rid of water, but they consume relatively high amounts of power. Having too many pumps turn on simultaneously causes unnecessary power fluctuations. Instead of placing pumps in every room, duct blocks can be used to let water flow into designated bilge compartments. There doesn’t need to be a separate bilge space, usually it is enough to place a pump on the bottom\-most room and route the water there. --> 
+水泵是最基础的排水方式，但他们相对而言会消耗很多电力。同时存在太多工作的水泵会带来不必要的负载波动。除了水泵，排水口可以让水流流入指定底部舱室。并不需要专门设计一个单独的底部空间，一般来说把水泵放在最低舱然后再把水送过去就好了。  
 
 ![](img_SubmarineEditor/Waterproofing.png)
 
-Compartmentalizing the space is a good way to make sure a small leak doesn’t turn into a catastrophe. The larger the rooms on a sub, the further water can advance without obstacles. Remember to close doors behind you, otherwise they’re useless. A good move would be to use doors that close automatically, which is why the game's vanilla subs come with auto\-closing doors. Hate them or love them, they're for your own protection!
+<!-- Compartmentalizing the space is a good way to make sure a small leak doesn’t turn into a catastrophe. The larger the rooms on a sub, the further water can advance without obstacles. Remember to close doors behind you, otherwise they’re useless. A good move would be to use doors that close automatically, which is why the game's vanilla subs come with auto\-closing doors. Hate them or love them, they're for your own protection!  --> 
+将空间分隔开是一个规避小漏水演变成灾难的好办法。潜艇的舱室越大，那么就有更多的水可以毫无阻碍地进入。但要记得关门，不然分割空间也不管用。一个好的做法是使用自动关闭的门，这就是为什么游戏的原版潜艇用自动关闭门。 无论好恶，都是为了保护你！  
+
+## Waypoints 路径点 
+<!-- All AI characters need waypoints to get around the submarine. Waypoints can be placed manually, but a far easier way to do it is with the ‘Generate waypoints’ button on the left side of the screen. After waypoints are generated, they can be fine\-tuned manually, if needed.  -->  
+所有的ai角色都需要路径点才能再潜艇中活动，路径点可以手动放置，但屏幕右上角的”生成路径点“按钮是一个非常容易的铺路径点的方法。当路径点生成后，有需要的话你可以再手动微调。  
 
 
-## Waypoints
-All AI characters need waypoints to get around the submarine. Waypoints can be placed manually, but a far easier way to do it is with the ‘Generate waypoints’ button on the left side of the screen. After waypoints are generated, they can be fine\-tuned manually, if needed.
+<!-- It's a good practice to generate the waypoints once items and structures are already in place. Also, if you remove or add doors, stairs, or ladders, remember to add waypoints too to prevent the AI from getting stuck. -->  
+物品和结构一完全放好，然后生成路径点是一个很好的做法。 此外，如果你要删除或添加门，楼梯，或梯子，记得添加路径点，以防止AI卡住。   
 
-It's a good practice to generate the waypoints once items and structures are already in place. Also, if you remove or add doors, stairs, or ladders, remember to add waypoints too to prevent the AI from getting stuck.
-
-
-## Editing multiple properties
-This highly requested feature has finally been implemented! If you have multiple entities selected and change a property in the top right entity editor, the changes will be applied to all items in your selection. This works for any item and any property. Colors, toggles, labels, tags...you name it.
-
-**IMPORTANT:** Multiple editing has some limitations. For example, OxygenGenerator and Engine both have the Power Consumption property, but they can still not be edited simultaneously because they are part of different item components. By contrast, editing the ‘Auto Fill’ property on a Supplies Cabinet and a Steel Locker, for instance, will work, because the property that is being edited is part of the ItemContainer component which both items have.
+## Editing multiple properties 修改多个属性
+<!-- This highly requested feature has finally been implemented! If you have multiple entities selected and change a property in the top right entity editor, the changes will be applied to all items in your selection. This works for any item and any property. Colors, toggles, labels, tags...you name it. -->  
+这个备受期待的功能终于实现了! 如果选择了多个实体并在右上方的实体编辑器中更改了属性，则更改将应用于所选的所有项目。 这适用于任何项目和任何属性。 颜色、切换、标签、标记等等你能想到的。 
 
 
-## Autosaving
-You might have noticed that there is a new button on the Load menu called Load Autosave. Every 5 minutes or when the game is paused, the editor will automatically save your submarine into a temporary file located in Submarines/.AutoSave/AutoSave.sub which will not show up in your submarine list.
 
-If the power goes out, the game crashes, a random chimp event occurs or something else horrible happens after you’ve spent hours wiring the submarine and forgot to save, you can recover the AutoSave submarine from the Load menu.
-
-**TIP:** All submarines share the same autosave file, so be careful what you load before recovering your submarine.
+<!-- **IMPORTANT:** Multiple editing has some limitations. For example, OxygenGenerator and Engine both have the Power Consumption property, but they can still not be edited simultaneously because they are part of different item components. By contrast, editing the ‘Auto Fill’ property on a Supplies Cabinet and a Steel Locker, for instance, will work, because the property that is being edited is part of the ItemContainer component which both items have.-->  
+**重要提示**：批量修改也有限制。比如，制氧机和引擎都有电力消耗的属性，但他们不能一起修改，因为他们是不同物品组件的一部分。相较而言，比如编辑应急物资柜和钢制储物柜的自动填充属性则会有效。因为他们的属性都是ItemContainer组件所有的共同属性。  
 
 
-## Editor shortcuts
-- W, A, S, D – Scroll
-- Shift + W, A, S, D – Scroll faster
-- Ctrl+1, Control+2 – Switch between edit and wiring mode.
-- Q – Toggle entity catalog visibility.
-- F – Centers the camera to selection.
-- E – Open item interface.
-- Ctrl+A – Select or deselect everything.
-- Ctrl+S – Show save menu.
-- Ctrl+Shift+S – Quick\-save your submarine.
-- Ctrl+M, Ctrl+N – Flip item horizontally or vertically.
-- Space + Left click – Link item to another \(Useful in linking hulls together or an oxygen generator to vents\).
+## Autosaving 自动保存
+<!-- You might have noticed that there is a new button on the Load menu called Load Autosave. Every 5 minutes or when the game is paused, the editor will automatically save your submarine into a temporary file located in Submarines/.AutoSave/AutoSave.sub which will not show up in your submarine list. -->
+你可能注意到在编辑器的打开潜艇菜单中多了一个新的选项叫加载自动存档。每五分钟或者没担当游戏暂停,编辑器便会自动储存你的潜艇到一个暂时的文件夹种，位于Submarines/.AutoSave/AutoSave.sub ，但这不会在你的潜艇列表中显示。  
 
-Holding down shift while dragging or resizing items disables grid snapping.
+<!-- If the power goes out, the game crashes, a random chimp event occurs or something else horrible happens after you’ve spent hours wiring the submarine and forgot to save, you can recover the AutoSave submarine from the Load menu. -->
+如果断电或者游戏崩溃了，或者其他突发的什么恐怖的事情导致你花了数小时制作、接线的潜艇没有保存，你可以从自动保存中重新再找到它。
+
+<!-- **TIP:** All submarines share the same autosave file, so be careful what you load before recovering your submarine. -->  
+**提示**：所有的潜艇都共享一个自动保存文件夹，所以你要小心加载别的潜艇在你找到丢失的潜艇前。 
 
 
-## Thanks for reading!
-We hope you found this guide helpful – feedback is always welcome, so let us know how we did. Be sure to post your subs on Barotrauma’s Steam workshop and on our [Discord server](http://discord.gg/undertow), where we have a channel dedicated to custom subs!
+## Editor shortcuts  编辑器快捷键
+- W, A, S, D – 上下左右移动  
+- Shift + W, A, S, D – 更快移动  
+- Ctrl+1, Control+2 – 编辑模式和接线模式  
+- Q – 切换物品列表或者说实体清单的可见性（向下隐藏）  
+- F – 屏幕切至以选中物品为中心。  
+- E – 打开物品交互ui。  
+- Ctrl+A – 全选、全取消选。  
+- Ctrl+S – 保存潜艇的快捷键，进入保存潜艇页面.  
+- Ctrl+Shift+S –快捷保存潜艇文件。  
+- Ctrl+M, Ctrl+N – 水平或竖直翻转物体。  
+- Space + Left click –连接物体、舱室（比如制氧机-通风口，hull之间、装弹器-炮台）
+
+在拖动项目或调整项目大小时按住 Shift 键可禁用网格捕捉。
+
+
+## Thanks for reading!  感谢阅读！
+<!-- We hope you found this guide helpful – feedback is always welcome, so let us know how we did. Be sure to post your subs on Barotrauma’s Steam workshop and on our [Discord server](http://discord.gg/undertow), where we have a channel dedicated to custom subs! -->  
+我们希望您能从这个指导手册中受益。反馈总是受欢迎的，还请让我们知道我们之前做得如何。确保您将潜艇投再潜渊症的steam创意工坊上，或者我们的[Discord server](http://discord.gg/undertow) （国外社交软件，qq频道类似于它），中专门有一个关于制作潜艇的分区频道！。
 
 

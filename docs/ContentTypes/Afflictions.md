@@ -33,7 +33,7 @@
 - `MaxRadialDistort` : `float`  | `最大（视觉）径向畸变`：`浮点数`  
 - `MinChromaticAberration` : `float`  | `最小色象差`：`浮点数`  
 - `MaxChromaticAberration` : `float`  | `最大色象差`：`浮点数`  
-- `GrainColor` : `Color`  | 	`颗粒（视觉）颜色`：`RGB颜色值+亮度`  *ps:是视觉效果，详见井蛙之见的影响*  
+- `GrainColor` : `Color`  | 	`颗粒（视觉）颜色`：`RGB颜色值+A(透明度，0为透明，255为不透明）`  *ps:是视觉效果，详见井蛙之见的影响*  
 - `MinGrainStrength` : `float`  | `最小颗粒（视觉）效果强度`：`浮点数`  
 - `MaxGrainStrength` : `float`  | `最大颗粒（视觉）效果强度`：`浮点数`  
 - `ScreenEffectFluctuationFrequency` : `float`  | `视觉效果波动频率`：`浮点数`  
@@ -49,10 +49,10 @@
 - `MaxResistance` : `float`  |`最大抗性`：`浮点数`      *ps:这个数应该介于0到1*  
 - `DialogFlag` : `Identifier`  |`（设置）对话标识`：`一个识别用的字符串`  
 - `Tag` : `Identifier`  |`设置标识`：`一个识别用字符串`  
-- `MinFaceTint` : `Color`  |`最小面部色调`：`rgb+亮度`  
-- `MaxFaceTint` : `Color`  |`最大面部色调`：`rgb+亮度`  
-- `MinBodyTint` : `Color`  |`最小身体色调`：`rgb+亮度`  
-- `MaxBodyTint` : `Color`  |`最小身体色调`：`rgb+亮度`   
-*ps:此文件中所提及的color在xml中格式均为"int,int,int,int"，翻译来自游戏中对灯光颜色4值的理解。*  
+- `MinFaceTint` : `Color`  |`最小面部色调`：`rgb+A`  
+- `MaxFaceTint` : `Color`  |`最大面部色调`：`rgb+A`  
+- `MinBodyTint` : `Color`  |`最小身体色调`：`rgb+A`  
+- `MaxBodyTint` : `Color`  |`最小身体色调`：`rgb+A`   
+*ps:此文件中所提及的color在xml中格式均为"R,G,B,Alpha"，翻译来自游戏中对灯光颜色4值的理解。*  
 *ps2:此文件中很多涉及最小最大的数值都是随* ***影响*** *本身的强度变化*
 
