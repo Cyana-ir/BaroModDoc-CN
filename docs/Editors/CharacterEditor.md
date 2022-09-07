@@ -1,73 +1,101 @@
 ---
 has_toc: true
 ---
-# Character editor
+# Character editor 角色编辑器
 
-## Hello creator!
-![](img_CharacterEditor/Intro.png)
-*Written for v0.9.5.0 by itchyOwl*
+## 各位创作者，大家好！
+![](img_CharacterEditor/Intro.png)  
+*原内容由itchyOwl于v0.9.5.0编写*  
 
-In Barotrauma, all characters have a **character config file**. A character config file defines visual things like sounds and particle effects as well as functional things, like how the character acts, how much health it has, and whether or not it can walk. A character config file also contains references to the ragdoll and animation files.
+<!-- In Barotrauma, all characters have a **character config file**. A character config file defines visual things like sounds and particle effects as well as functional things, like how the character acts, how much health it has, and whether or not it can walk. A character config file also contains references to the ragdoll and animation files. -->  
+在潜渊症中，所有的角色都有一个**角色配置文件夹**。角色配置文件夹定义了视觉内容如声效，粒子特效和功能性内容，比如角色如何行动，有多少生命值，是否能够走路。角色配置文件夹同样包含布娃娃模型和动画文件的引用。  
+*译者注:原文"...A character config file defines visual things like sounds and particle effects...，个人难以理解为何声效被纳入了视觉内容的范畴。*  
 
-A **ragdoll file** defines the physical dimensions of the character: How many limbs and joints does it have? At what coordinates are they found on the texture? How much does the character weigh? What are the relations of the limbs to each other and how they constitute the skeleton or the physical 'ragdoll' of the character. A ragdoll file also contains things like damage modifiers \(armor or weak spots\), lights, and attacks.
+<!-- A **ragdoll file** defines the physical dimensions of the character: How many limbs and joints does it have? At what coordinates are they found on the texture? How much does the character weigh? What are the relations of the limbs to each other and how they constitute the skeleton or the physical 'ragdoll' of the character. A ragdoll file also contains things like damage modifiers \(armor or weak spots\), lights, and attacks. -->
+布娃娃文件夹（ragdoll)定义了角色的物理规格：有多少肢体，关节。贴图的坐标在哪，角色有多重，每个肢体之间有什么关联，又如何构建成角色的骨架或角色身体的“布娃娃"。文件中也包含了例如伤害修正（盔甲或者弱点导致的），色泽属性，攻击的相关属性等。  
 
-The movement of the character is defined in the **animation files**. The animation files contain things like forces, multipliers and other variables that define the forces applied on the ragdoll when it moves. Each animation type is defined in a separate file. For a character that can move, that would mean four different files: Walk, Run, SwimSlow, and SwimFast.
+<!-- The movement of the character is defined in the **animation files**. The animation files contain things like forces, multipliers and other variables that define the forces applied on the ragdoll when it moves. Each animation type is defined in a separate file. For a character that can move, that would mean four different files: Walk, Run, SwimSlow, and SwimFast. -->
+一个角色的移动是在**"Animation"**文件（下称动画文件）中定义的。动画文件中包含了如理量、修正系数和其他定义作用于布娃娃运动的力量的变量。每一个动画类型都是由独立的文件定义的。对于一个可以移动的角色来说，其需要四个不同的问文件:walk(走）、run(跑）、SwimSlow(低速游泳）和SwimFast(高速游泳）
+。
+<!-- In the character editor, you can edit all the character files without having to worry about .xml editing. In the following, you can find more detailed instructions for editing each of these files or aspects of the character. -->  
+在角色编辑器中，你可以编辑所有的角色文件并且不用担心.xml文件的编辑。接下来，你将能在这里发现更细致的关于编辑角色的各个文件和方面的指导。
 
-In the character editor, you can edit all the character files without having to worry about .xml editing. In the following, you can find more detailed instructions for editing each of these files or aspects of the character.
+<!-- **TIP**: Use the number keys \[1\] to \[5\] on your keyboard to quickly switch between the different edit modes. -->  
+**提示**：使用数字键1-5可以快速切换不同的编辑模式。
 
-**TIP**: Use the number keys \[1\] to \[5\] on your keyboard to quickly switch between the different edit modes.
 
-
-## Creating a new character
+## Creating a new character  创造一个新角色  
 ![](img_CharacterEditor/CreateNewCharacter.png)
 
-To create a new character, click the 'Create New Character' button found on the 'Files' panel. The following view will ask for basic information about the character you are about to create. The paths to the config file and the texture path are both relative to the Barotrauma project folder.
+<!-- To create a new character, click the 'Create New Character' button found on the 'Files' panel. The following view will ask for basic information about the character you are about to create. The paths to the config file and the texture path are both relative to the Barotrauma project folder. -->  
+如果要创造一个新生物，请点击在‘files'选单上的"create new Character"(创造新角色\生物）按钮。之后弹出来的窗口中会向您确定你要创造生物的基本信息。其配置文件和贴图文件都是相对于潜渊症游戏目录定位。
 
-The 'Config File Output' is the path to the character config file. At this point, the file does not yet exist: it will be stored on disk when the character is created. You can change the path here, but the default should be fine too.
 
-One thing you should have on hand at this point is a **texture** for the character. In Barotrauma, all characters are made of limbs that have a sprite. In practice, you'll need a sprite sheet, where the sprites for all the limbs of your character are found.
+<!-- The 'Config File Output' is the path to the character config file. At this point, the file does not yet exist: it will be stored on disk when the character is created. You can change the path here, but the default should be fine too. -->  'Config File Output' 是角色配置文件的路径。在这个时候，实际文件还没有生成：当你橘色创造后才会储存在硬盘上。您可以在这个页面改变路径，但默认路径应该不至于要换。  
+
+<!-- One thing you should have on hand at this point is a **texture** for the character. In Barotrauma, all characters are made of limbs that have a sprite. In practice, you'll need a sprite sheet, where the sprites for all the limbs of your character are found. -->  
+在这个阶段需要你动手的是角色的**贴图**.在潜渊症中，所有的角色由具有贴图的肢体组成。实际上，你需要一个包含所有你角色具备的肢体的总贴图集。  
 
 ![](img_CharacterEditor/crawler.png)
 
-You also need to select or create a new **content package** for the character, which contains the custom content for the game. A content package is essentially a mod. Select the content package you want to use for the character or create a new content package by providing a name for it and clicking the 'Create New' button.
+<!-- You also need to select or create a new **content package** for the character, which contains the custom content for the game. A content package is essentially a mod. Select the content package you want to use for the character or create a new content package by providing a name for it and clicking the 'Create New' button.--> 
+你同样需要选择或者为角色创造一个新的**内容包**——其会包含了游戏的自定义内容。而一个内容包本质上是一个mod。选择一个你想为角色用的内容包或者通过提供命名新的内容包并点"Create New"按钮即可。
 
-Once you have filled out the basic information, you can define some limbs. Use the '+' and '\-' buttons to add or remove limbs. You can also add multiple limbs by defining a 2D grid \(the 'X' and 'Y' fields\) and pressing the 'Add Multiple' button.
+<!-- Once you have filled out the basic information, you can define some limbs. Use the '+' and '\-' buttons to add or remove limbs. You can also add multiple limbs by defining a 2D grid \(the 'X' and 'Y' fields\) and pressing the 'Add Multiple' button. -->
+当你填好了基础信息之后，你就可以开始定义一些肢体（limbs)。使用‘+’或者‘-’按键来添加或者移除肢体，你也可以通过定义2维网格坐标（X和Y）增加多个肢体并按下"add multiple"按键.
 
 ![](img_CharacterEditor/DefineRagdoll.png)
 
-Don't worry too much about the definitions here. We just want to add some limbs that we can edit later on. It's also possible but currently not advised to define the joints here. It can be done later much more easily.
+<!-- Don't worry too much about the definitions here. We just want to add some limbs that we can edit later on. It's also possible but currently not advised to define the joints here. It can be done later much more easily. -->  
+不用太担心这一块的定义，我们只是想添加一些我们之后再编辑的肢体在这罢了。这个页面也可以用来定义Joints（关节），但晚点去无疑会更方便。
 
 
-## Limbs
+## Limbs 肢体
 ![](img_CharacterEditor/CreateLimb.png)
 
-When you are done with adding some limbs, click the 'Create' button. At first, your character will look a terrible mess with all the limbs on top of each other. This is because there aren’t any joints yet to join and keep apart the different limbs. For now, let's just ignore how the character looks in the game view; it won't look right before we add the joints.
+<!-- When you are done with adding some limbs, click the 'Create' button. At first, your character will look a terrible mess with all the limbs on top of each other. This is because there aren’t any joints yet to join and keep apart the different limbs. For now, let's just ignore how the character looks in the game view; it won't look right before we add the joints. -->  
+当你添加了一些肢体之后，点击‘Create’按钮即可。在这之后，首先你创建的角色可能看起来会混在一团。这是因为还没有任何的关节（joints)去将其组合并区分不同的肢体。就现在而言，暂时忽略角色在游戏中的外观，在添加好关节节点之前，这些外观都不是最终成品。
 
-**TIP**: You can add limbs after creating joints and create joints before the limbs are final. However, it's easier to define the limbs first. Then the joints. And then iterate.
+<!-- **TIP**: You can add limbs after creating joints and create joints before the limbs are final. However, it's easier to define the limbs first. Then the joints. And then iterate. -->
+**提示**:你可以在创建关节（joints)之后再添加肢体（limbs)，也可以再肢体完善前再加入关节。然而，先定义肢体再添加关键，循环往复会容易不少。  
 
-Before going into how we add joints, we should first adjust the **source rects** and the **colliders** of the limbs. Source rects are simply definitions about the position and the dimensions of the limbs; they mark where the limb is on the texture file \(in pixels\). Colliders, on the other hand, are the physical definitions of the limbs. They determine how the limbs move in the game world. Note that if the colliders are of a wrong size, the collisions won't work right. If the colliders are too small, the ragdoll can be unstable and even explode.
-
-OK, let's start editing. First, make sure that you have the 'Spritesheet' and 'Limbs' toggles selected on the 'Edit' panel. Also cross over the 'Adjust Collider' toggle found on top of the screen.
-
-**TIP**: You can change the collider shape by adjusting the collider dimensions from the parameters. Enable the 'Parameters' toggle to see the parameters of the selected limb.
-
-You'll now see the colliders of the limbs drawn in green over your character. Select the limbs over the sprite sheet. Drag the small box in the top left corner to move the source rect, and the box in the bottom right corner to adjust the size of the source rect \(and the collider\).
-
-**IMPORTANT**: When the 'Adjust Collider' mode is enabled, the colliders are automatically recalculated when you edit the source rects. This will overwrite your manual adjustments!
-
-**TIP**: Use the arrow keys to move the source rect one pixel at a time. Hold Left Control to adjust the size of the source rect.
-
-You can add more limbs by duplicating an existing limb or by creating a new limb. Enable the 'Limbs' mode in the 'Edit' panel. Now the buttons on the lower right should become enabled. Press 'Create Limb' and draw a rect over the sprite sheet where the limb should be found on the texture. Releasing the mouse button should create the limb.
-
-**TIP**: Most of the limbs can also be deleted, but there are some restrictions to this. If joints or limbs don't get deleted or added correctly, or you have some other issue in the editor, take a look inside the .xml file. You can manually add or remove limbs and joints in the .xml too.
+<!-- Before going into how we add joints, we should first adjust the **source rects** and the **colliders** of the limbs. Source rects are simply definitions about the position and the dimensions of the limbs; they mark where the limb is on the texture file \(in pixels\). Colliders, on the other hand, are the physical definitions of the limbs. They determine how the limbs move in the game world. Note that if the colliders are of a wrong size, the collisions won't work right. If the colliders are too small, the ragdoll can be unstable and even explode. -->
+在学习如何添加关节（joints)之前，我们首先需要调整肢体的贴图框和碰撞箱。贴图框是肢体位置和尺寸的简要定义，他们标记了肢体在贴图文件的哪一块上（在像素层面）。而另一方面，碰撞箱则是从物理角度对肢体进行定义。他们决定了这些肢体在游戏世界中如何移动。值得注意的是，如果碰撞箱的大小不对，那么碰撞箱是无法正常工作的。如果碰撞箱太小，那么角色的布娃娃状态就会不稳定，甚至爆开来。  
 
 
-## Joints
+<!-- OK, let's start editing. First, make sure that you have the 'Spritesheet' and 'Limbs' toggles selected on the 'Edit' panel. Also cross over the 'Adjust Collider' toggle found on top of the screen. -->
+说了这么多，让我们开始动手吧。首先确保你已经将‘Spritessheet’（贴图）和‘limbs’（肢体\四肢）在编辑选项选单上选上了。同样将屏幕顶部的“adjuset Collider"（调整碰撞）给选上。
+
+<!-- **TIP**: You can change the collider shape by adjusting the collider dimensions from the parameters. Enable the 'Parameters' toggle to see the parameters of the selected limb. -->  
+**提示**：你可以通过调整参数中的碰撞箱尺寸来改变碰撞箱的形状。在选单上勾选"Parameters"(参数），来看所选肢体的尺寸。（先看后面再看这里）
+
+<!-- You'll now see the colliders of the limbs drawn in green over your character. Select the limbs over the sprite sheet. Drag the small box in the top left corner to move the source rect, and the box in the bottom right corner to adjust the size of the source rect \(and the collider\). -->  
+你现在可以看见肢体的绿色碰撞箱在你的橘色上，选中贴图上的肢体，方框坐上角来移动贴图框，方框右下角调大小调节贴图框（和碰撞箱）  
+
+<!-- **IMPORTANT**: When the 'Adjust Collider' mode is enabled, the colliders are automatically recalculated when you edit the source rects. This will overwrite your manual adjustments! -->  
+**重要提示**；当你勾选上“adjust Collider"的时候，碰撞箱会随着你贴图框变化自动重新计算。这会覆盖你的手动调整。（如果调了没动静按刷新）
+
+<!-- **TIP**: Use the arrow keys to move the source rect one pixel at a time. Hold Left Control to adjust the size of the source rect. -->  
+**提示**；使用方向键可以以一次一像素的形式移动贴图框。如果再同时按住左ctrl，可以用于调整贴图框的大小。
+
+<!-- You can add more limbs by duplicating an existing limb or by creating a new limb. Enable the 'Limbs' mode in the 'Edit' panel. Now the buttons on the lower right should become enabled. Press 'Create Limb' and draw a rect over the sprite sheet where the limb should be found on the texture. Releasing the mouse button should create the limb. -->  
+你可以通过复制现有肢体添加更多的肢体。在编辑选单里面勾选上"limbs"，然后右下角的那些按钮（包含复制肢体）就出现了。按下“create limbs"(创造肢体）并在贴图表中框选这个肢体上应有的贴图（左键按住，框），松开鼠标后就会创造出一个新的肢体。
+
+<!-- **TIP**: Most of the limbs can also be deleted, but there are some restrictions to this. If joints or limbs don't get deleted or added correctly, or you have some other issue in the editor, take a look inside the .xml file. You can manually add or remove limbs and joints in the .xml too. -->  
+**提示**：大多数的肢体也都可以被删除，但有一些限制。如果关节（joints）和肢体（limbs)没有能正确地增加或者删除或者你在编辑器里面出了点其他问题，你也可以打开对应的.xml文件，手动添加\删除肢体和关节。  
+
+
+## Joints  关节  
 ![](img_CharacterEditor/CreateJoint.png)
 
-When you are done with the main limbs \(you don't have to define all of them at once\), you can start creating joints between the limbs.
+<!-- When you are done with the main limbs \(you don't have to define all of them at once\), you can start creating joints between the limbs. -->
+当您完成了主要的一些肢体（不必一次性全部做完），你就可以开始创造关节连接做好的肢体了。  
 
-Make sure to have the 'Limbs' mode selected. Then select a limb, and click the 'Create Joint' button \[ctrl+e\]. You can now draw a joint between two limbs. First select the starting point of the joint inside the currently selected limb by clicking somewhere inside the limb's source rect on the sprite sheet. After that, you'll need to define the other end of the joint. To do that, hover your mouse over the limb you want and select it with the left mouse button. Note that the location matters: the other end is created at the position of the mouse. This can of course be changed after the joint has been created.
+
+<!-- Make sure to have the 'Limbs' mode selected. Then select a limb, and click the 'Create Joint' button \[ctrl+e\]. You can now draw a joint between two limbs. First select the starting point of the joint inside the currently selected limb by clicking somewhere inside the limb's source rect on the sprite sheet. After that, you'll need to define the other end of the joint. To do that, hover your mouse over the limb you want and select it with the left mouse button. Note that the location matters: the other end is created at the position of the mouse. This can of course be changed after the joint has been created. -->  
+请确保编辑选单的‘limbs’模式是选上的。然后再选择一个肢体，点击‘create joint'(创造关节）按钮（或者快捷键ctrl+e。然后你就可以再两个肢体之间创造关节了，首先在当前选好的肢体上选择一个锚点，。然后你需要决定关节的另一端。为了实现这一点，，将你的鼠标悬停在你想要的那个肢体上（会显示肢体名字），并用左键选择。注意，另一端的定位就在你鼠标的位置。当然，在创造关节之后这个点是可以调整的。  
+
+
 
 **TIP**: Press \[ctrl\] to select and edit multiple limbs or joints at the same time.
 
