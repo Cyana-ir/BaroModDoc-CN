@@ -8,53 +8,54 @@ has_toc: true
 *原内容由itchyOwl于v0.9.5.0编写*  
 
 <!-- In Barotrauma, all characters have a **character config file**. A character config file defines visual things like sounds and particle effects as well as functional things, like how the character acts, how much health it has, and whether or not it can walk. A character config file also contains references to the ragdoll and animation files. -->  
-在潜渊症中，所有的角色都有一个**角色配置文件夹**。角色配置文件夹定义了视觉内容如声效，粒子特效和功能性内容，比如角色如何行动，有多少生命值，是否能够走路。角色配置文件夹同样包含布娃娃模型和动画文件的引用。  
+在潜渊症中，所有的角色都有一个**角色配置文件夹**。角色配置文件夹定义了视觉内容如声效，粒子特效和功能性内容，比如角色如何行动，有多少生命值，是否能够走路。角色配置文件夹同样包含对布娃娃模型和动画文件的引用。  
 *译者注:原文"...A character config file defines visual things like sounds and particle effects...，个人难以理解为何声效被纳入了视觉内容的范畴。*  
 
 <!-- A **ragdoll file** defines the physical dimensions of the character: How many limbs and joints does it have? At what coordinates are they found on the texture? How much does the character weigh? What are the relations of the limbs to each other and how they constitute the skeleton or the physical 'ragdoll' of the character. A ragdoll file also contains things like damage modifiers \(armor or weak spots\), lights, and attacks. -->
-布娃娃文件夹（ragdoll)定义了角色的物理规格：有多少肢体，关节。贴图的坐标在哪，角色有多重，每个肢体之间有什么关联，又如何构建成角色的骨架或角色身体的“布娃娃"。文件中也包含了例如伤害修正（盔甲或者弱点导致的），色泽属性，攻击的相关属性等。  
+布娃娃模型文件夹（ragdoll)定义了角色的物理存在：有多少肢体、关节，贴图的坐标在哪，角色有多重，每个肢体之间有什么关联，又如何构建成角色的骨架或角色身体的“布娃娃"模型。文件中也包含了例如伤害补正（有甲或者弱点），色泽属性（肢体的），攻击的相关属性设置等。  
 
 <!-- The movement of the character is defined in the **animation files**. The animation files contain things like forces, multipliers and other variables that define the forces applied on the ragdoll when it moves. Each animation type is defined in a separate file. For a character that can move, that would mean four different files: Walk, Run, SwimSlow, and SwimFast. -->  
-一个角色的移动是在**"Animation"**文件（下称动画文件）中定义的。动画文件中包含了如理量、修正系数和其他定义作用于布娃娃运动的力量的变量。每一个动画类型都是由独立的文件定义的。对于一个可以移动的角色来说，其需要四个不同的问文件:walk(走）、run(跑）、SwimSlow(低速游泳）和SwimFast(高速游泳）  
+一个角色的移动是在**"Animation"**文件（下称动画文件）中定义的。动画文件中包含了如推动力、修正系数和其他决定了作用于布娃娃运动的力量的变量。每一个动画类型都是由独立的文件定义的。对于一个可以移动的角色来说，其需要四个不同的文件:walk(走）、run(跑）、SwimSlow(低速游泳）和SwimFast(高速游泳）  
 。
 <!-- In the character editor, you can edit all the character files without having to worry about .xml editing. In the following, you can find more detailed instructions for editing each of these files or aspects of the character. -->  
-在角色编辑器中，您可以编辑所有的角色文件并且不用担心.xml文件的编辑。接下来，您将能在这里发现更细致的关于编辑角色的各个文件和方面的指导。
+在角色编辑器中，您可以编辑所有的角色文件而不用操心.xml文件的编辑。接下来，您将能在这里找到更细致的关于编辑角色的各个文件和方面的指导。  
 
 <!-- **TIP**: Use the number keys \[1\] to \[5\] on your keyboard to quickly switch between the different edit modes. -->  
-**提示**：使用数字键1-5可以快速切换不同的编辑模式。
+**提示**：使用数字键1-5可以快速切换不同的编辑模式。  
 
 
 ## Creating a new character  创造一个新角色  
 ![](img_CharacterEditor/CreateNewCharacter.png)
 
 <!-- To create a new character, click the 'Create New Character' button found on the 'Files' panel. The following view will ask for basic information about the character you are about to create. The paths to the config file and the texture path are both relative to the Barotrauma project folder. -->  
-如果要创造一个新生物，请点击在‘files'选单上的"create new Character"(创造新角色\生物）按钮。之后弹出来的窗口中会向您确定要创造生物的基本信息。其配置文件和贴图文件都是相对于潜渊症游戏目录定位。
+如果要创造一个新生物\角色，请点击在‘files'选单上的"create new Character"(创造新角色\生物）按钮。之后弹出来的窗口中会向您确定要创造生物的基本信息。其配置文件和贴图文件都是相对于潜渊症游戏目录定位。  
 
 
-<!-- The 'Config File Output' is the path to the character config file. At this point, the file does not yet exist: it will be stored on disk when the character is created. You can change the path here, but the default should be fine too. -->  'Config File Output' 是角色配置文件的路径。在这个时候，实际文件还没有生成：当你橘色创造后才会储存在硬盘上。您可以在这个页面改变路径，但默认路径应该不至于要换。  
+<!-- The 'Config File Output' is the path to the character config file. At this point, the file does not yet exist: it will be stored on disk when the character is created. You can change the path here, but the default should be fine too. -->  
+'Config File Output' 是角色配置文件的路径。在这个时候，实际文件还没有生成：当你角色创建后才会储存在硬盘上。您可以在这个页面改变路径，但默认路径就足够了。  
 
 <!-- One thing you should have on hand at this point is a **texture** for the character. In Barotrauma, all characters are made of limbs that have a sprite. In practice, you'll need a sprite sheet, where the sprites for all the limbs of your character are found. -->  
-在这个阶段需要你动手的是角色的**贴图**.在潜渊症中，所有的角色由具有贴图的肢体组成。实际上，你需要一个包含所有你角色具备的肢体的总贴图集。  
+在这个阶段，需要你动手的是角色的**贴图**.在潜渊症中，所有的角色由具有贴图的肢体组成。实际上，你需要一个包含所有你角色具备的肢体的总贴图集。  
 
 ![](img_CharacterEditor/crawler.png)
 
-<!-- You also need to select or create a new **content package** for the character, which contains the custom content for the game. A content package is essentially a mod. Select the content package you want to use for the character or create a new content package by providing a name for it and clicking the 'Create New' button.--> 
-你同样需要选择或者为角色创造一个新的**内容包**——其会包含了游戏的自定义内容。而一个内容包本质上是一个mod。选择一个你想为角色用的内容包或者通过提供命名新的内容包并点"Create New"按钮即可。
+<!-- You also need to select or create a new **content package** for the character, which contains the custom content for the game. A content package is essentially a mod. Select the content package you want to use for the character or create a new content package by providing a name for it and clicking the 'Create New' button.-->  
+你同样需要选择或者为角色创造一个新的**内容包**——其包含着游戏的自定义内容。而一个内容包本质上也就是一个mod。选择一个你想这个角色\生物存在的内容包或者通过提供一个命名创建新的内容包并点"Create New"按钮即可。  
 
 <!-- Once you have filled out the basic information, you can define some limbs. Use the '+' and '\-' buttons to add or remove limbs. You can also add multiple limbs by defining a 2D grid \(the 'X' and 'Y' fields\) and pressing the 'Add Multiple' button. -->
-当你填好了基础信息之后，你就可以开始定义一些肢体（limbs)。使用‘+’或者‘-’按键来添加或者移除肢体，你也可以通过定义2维网格坐标（X和Y）增加多个肢体并按下"add multiple"按键.
+当你填好了基础信息之后，你就可以开始定义一些肢体（limbs)了。使用‘+’或者‘-’按键来添加或者移除肢体，你也可以通过定义2维网格坐标（X和Y）增加多个肢体并按下"add multiple"按键.
 
 ![](img_CharacterEditor/DefineRagdoll.png)
 
 <!-- Don't worry too much about the definitions here. We just want to add some limbs that we can edit later on. It's also possible but currently not advised to define the joints here. It can be done later much more easily. -->  
-不用太担心这一块的定义，我们只是想添加一些我们之后再编辑的肢体在这罢了。这个页面也可以用来定义Joints（关节），但晚点去无疑会更方便。
+不用太担心这一块的定义有多么关键，我们只是想添加一些我们之后再编辑的肢体在这罢了。这个页面也可以用来定义Joints（关节），但晚点定义关节无疑会更方便。  
 
 
 ## Limbs 肢体
 ![](img_CharacterEditor/CreateLimb.png)
 
 <!-- When you are done with adding some limbs, click the 'Create' button. At first, your character will look a terrible mess with all the limbs on top of each other. This is because there aren’t any joints yet to join and keep apart the different limbs. For now, let's just ignore how the character looks in the game view; it won't look right before we add the joints. -->  
-当你添加了一些肢体之后，点击‘Create’按钮即可。在这之后，首先你创建的角色可能看起来会混在一团。这是因为还没有任何的关节（joints)去将其组合并区分不同的肢体。就现在而言，暂时忽略角色在游戏中的外观，在添加好关节节点之前，这些外观都不是最终成品。  
+当你在页面中添加了一些肢体之后，点击‘Create’按钮即可。在这之后，首先你创建的角色可能看起来混在一团。这是因为还没有任何的关节（joints)去组合并区分不同的肢体。就现在而言，暂时忽略角色在游戏中的外观，在添加好关节节点之前，这些外观都不代表最终成品。  
 
 <!-- **TIP**: You can add limbs after creating joints and create joints before the limbs are final. However, it's easier to define the limbs first. Then the joints. And then iterate. -->
 **提示**:你可以在创建关节（joints)之后再添加肢体（limbs)，也可以再肢体完善前再加入关节。然而，先定义肢体再添加关键，循环往复会容易不少。  
@@ -67,29 +68,29 @@ has_toc: true
 说了这么多，让我们开始动手吧。首先确保你已经将‘Spritessheet’（贴图）和‘limbs’（肢体\四肢）在编辑选项选单上选上了。同样将屏幕顶部的“adjuset Collider"（调整碰撞）给选上。
 
 <!-- **TIP**: You can change the collider shape by adjusting the collider dimensions from the parameters. Enable the 'Parameters' toggle to see the parameters of the selected limb. -->  
-**提示**：你可以通过调整参数中的碰撞体尺寸来改变碰撞体的形状。在选单上勾选"Parameters"(参数），来看所选肢体的尺寸。（先看后面再看这里）
+**提示**：你可以通过调整参数中的碰撞体尺寸来改变碰撞体的形状（器中radius是半径，可以创建球形或胶囊形）。在选单上勾选"Parameters"(参数），来看所选肢体的尺寸。（先别急着做，先看后面再看这里）
 
 <!-- You'll now see the colliders of the limbs drawn in green over your character. Select the limbs over the sprite sheet. Drag the small box in the top left corner to move the source rect, and the box in the bottom right corner to adjust the size of the source rect \(and the collider\). -->  
-你现在可以在你的角色上看见肢体的绿色碰撞范围，选中贴图上的肢体，方框坐上角来移动贴图框，方框右下角调大小调节贴图框（和碰撞范围）  
+你现在可以在你的角色上看见肢体的绿色碰撞范围，选中贴图上的肢体，通过方框左上角来移动贴图框，方框右下角调大小来调节贴图框（和碰撞范围）  
 
 <!-- **IMPORTANT**: When the 'Adjust Collider' mode is enabled, the colliders are automatically recalculated when you edit the source rects. This will overwrite your manual adjustments! -->  
-**重要提示**；当你勾选上“adjust Collider"的时候，碰撞范围会随着你贴图框变化自动重新计算。这会覆盖你的手动调整。（如果调了没动静按刷新）  
+**重要提示**；当你勾选上“adjust Collider"的时候，碰撞范围会随着你贴图框的变化自动重新计算。这会覆盖你的手动调整。（如果调了没动静按刷新就好）  
 
 <!-- **TIP**: Use the arrow keys to move the source rect one pixel at a time. Hold Left Control to adjust the size of the source rect. -->  
-**提示**；使用方向键可以以一次一像素的形式移动贴图框。如果再同时按住左ctrl，可以用于调整贴图框的大小。  
+**提示**；使用方向键可以以一次一像素的形式移动贴图框。如果再同时按住左ctrl，则可以用于调整贴图框的大小。  
 
 <!-- You can add more limbs by duplicating an existing limb or by creating a new limb. Enable the 'Limbs' mode in the 'Edit' panel. Now the buttons on the lower right should become enabled. Press 'Create Limb' and draw a rect over the sprite sheet where the limb should be found on the texture. Releasing the mouse button should create the limb. -->  
 你可以通过复制现有肢体添加更多的肢体。在编辑选单里面勾选上"limbs"，然后右下角的那些按钮（包含复制肢体）就出现了。按下“create limbs"(创造肢体）并在贴图表中框选这个肢体上应有的贴图（左键按住，框），松开鼠标后就会创造出一个新的肢体。  
 
 <!-- **TIP**: Most of the limbs can also be deleted, but there are some restrictions to this. If joints or limbs don't get deleted or added correctly, or you have some other issue in the editor, take a look inside the .xml file. You can manually add or remove limbs and joints in the .xml too. -->  
-**提示**：大多数的肢体也都可以被删除，但有一些限制。如果关节（joints）和肢体（limbs)没有能正确地增加或者删除或者你在编辑器里面出了点其他问题，你也可以打开对应的.xml文件，手动添加\删除肢体和关节。  
+**提示**：大多数的肢体也都可以被删除，但有一些限制（比如人类肢体无法删除）。如果关节（joints）和肢体（limbs)没有能正确地增加或者删除或者你在编辑器里面出了点其他问题，你也可以打开对应的.xml文件，手动添加\删除肢体和关节。  
 
 
 ## Joints  关节  
 ![](img_CharacterEditor/CreateJoint.png)
 
 <!-- When you are done with the main limbs \(you don't have to define all of them at once\), you can start creating joints between the limbs. -->
-当您完成了主要的一些肢体（不必一次性全部做完），你就可以开始创造关节，连接做好的肢体了。  
+当您完成了主要的一些肢体（不必一次性全部做完）的定义和调整，你就可以开始创造关节，连接做好的肢体了。  
 
 
 <!-- Make sure to have the 'Limbs' mode selected. Then select a limb, and click the 'Create Joint' button \[ctrl+e\]. You can now draw a joint between two limbs. First select the starting point of the joint inside the currently selected limb by clicking somewhere inside the limb's source rect on the sprite sheet. After that, you'll need to define the other end of the joint. To do that, hover your mouse over the limb you want and select it with the left mouse button. Note that the location matters: the other end is created at the position of the mouse. This can of course be changed after the joint has been created. -->  
@@ -104,10 +105,10 @@ has_toc: true
 **提示**：在关节编辑模式下，点击‘Copy Joint Settings'可以将第一个选择的关节设置复制给其他关节。  
 
 <!-- The editing mode should now automatically change to 'Joints'. In this mode, we can see the joint ends drawn as red circles. If you select one of the circles, it will change the color and show three small widgets next to each end of the joint. -->  
-在上一步操作之后，现在编辑模式应该自动切换为了关节编辑模式。在这个模式下，关节连接的“端”将以红色圆圈的形式显示出来。如果你选择了其中一个圆圈，那么其就会改变颜色，并弹出紧邻着关节每个端点的三个小图标。  
+在上一步操作之后，现在编辑模式应该自动切换为了关节编辑模式。在这个模式下，关节连接的“端”将以红色圆圈的形式显示出来。如果你选择了其中一个圆圈，那么其就会改变颜色，并弹出紧邻着关节每个端点的三个小图标状辅助工具（一圆圈两方框）。  
 
 <!-- **TIP**: You can edit and create limbs and joints also over the character in the game view, but it's usually easier to do it on the sprite sheet. -->  
-**提示**：你可以在编辑器中直接于画面中、创建肢体和关节，但在贴图表里面通常会更容易。  
+**提示**：你可以在编辑器中直接于画面中、创建肢体和关节，但在贴图表里面操作通常会更容易。  
 
 <!-- Try dragging the circular widget. This is the **anchor point of the joint**. It defines the point where the limb is attached to the other limb. The longer the distance between the two ends, the longer the joint. And the longer the joint, the farther the limbs are from each other. -->
 你可以试试拖动圆形的图标。这是**关节的锚点**。它决定了肢体上哪一个点用于连接其他肢体。关节两端的距离越长，那么关节的长度就越长，导致肢体之间距离越长。
@@ -119,21 +120,21 @@ has_toc: true
 ![](img_CharacterEditor/EditJointAngle.png)
 
 <!-- When you get both joint ends in place, select one of the rectangular widgets. These are the joint angle controls. They define **the limits of joint rotation**. There's an upper limit and a lower limit. By default both are set to 0. When the joint limits are at the same value, the joint is not allowed to bend at all. The upper limit should always be higher \(or the same\) than the lower limit. Both limits go clockwise from \-180 degrees to 180 degrees. -->  
-当你摆好了关节端点，请选中任何一个矩形图标。这两个图标是用于关节角度控制的。它们决定了**关节旋转限制**。一个是上限，一个是下限。默认下两者都0，当两者相等时，则关节是不能弯曲的。上限的数值应该保持大于等于下限的数值。两个限制是按顺时针从-180°到180°  
+当你摆好了关节端点，请选中任何一个矩形图标。这两个图标是用于关节角度控制的。它们决定了**关节旋转限制**。一个是上限（upper)，一个是下限(lower)。默认下两者都0度，当两者相等时，则关节是不能弯曲的。上限的数值应该保持大于等于下限的数值。两个限制是按顺时针从-180°到180° 、 。
   
 <!-- **IMPORTANT**: By default, the rotations start from the bottom \(\-180\) and also end at the bottom \(180\) meaning that 0 degrees is at the middle point, i.e. pointing up. 'Spritesheet Orientation' is the setting that adds an offset to this. Enable 'Spritesheet' on the 'Show' panel to see the orientation controls. -->  
 **重要提示**：默认情况下可调选择是从底部-180°开始，也最终止于底部180°（转一圈回来了）。这意味着0度是中点，也就是（方块）朝上。‘Spritessheet Orientation'是为这个角度增加偏转量的设置选项。当您在Show(展示）选单勾选‘spritessheet’（贴图）后，就可以看见角度控制。  
 
 <!-- **The line should point to the local up (or forward depending on how you think about it) of the texture sheet.** For example for the vanilla human, the up is 0 and for the Crawler it's 90 degrees.
 -->  
-**角度所引出的线条应指向贴图表的局部的上方（或者前方，取决于你怎么想）。**比如，原版下的人类，其上方就是0度方向，而爬行者的则是90度方向.  
+**角度所引出的线条应指向贴图表的局部的上方（或者前方，取决于你怎么想）。**比如，原版下的人类，其上方就是0度方向，而爬行者的则是90度方向。 
 
 <!-- Note that if you have a limb selected, the text will be 'Sprite Orientation'. And if you now change the orientation, the text and the controls turn yellow. This means that you have edited the offset for the selected limb only. To undo this, press the 'Reset' button next to the controls. -->  
-注意，如果你选中了一个肢体，那么文本将会变更成‘Sprite Orientation'。在此情况下改变方向角度，则文字和控制都会变为黄色，也意味着你已经修改这一个肢体的偏转量。如果要撤回这个修改，可以点旁边的Reset按钮（重置)。
+注意，如果你选中了一个肢体，那么文本将会变更成‘Sprite Orientation'。在此情况下改变方向角度，则文字和控制都会变为黄色，也意味着你已经修改这一个肢体的角度偏转量。如果要撤回这个修改，可以点旁边的Reset按钮（重置)。
 
 
 <!-- It's possible, for example, to define some of the limbs from left to right and others from top to bottom. In this case be sure to set the orientations right for each of your limbs or the angle controls will be pointing at a wrong direction! -->  
-从左到右或者从上到下定义肢体是可行的，但要确保每一个的方向都是i正确的，不然角度控件将会指向错误的方向。  
+从左到右或者从上到下定义肢体是可行的，但要确保每一个的方向都是正确的，不然角度控件将会指向错误的方向。  
 
 
 ## Ragdoll  布娃娃（角色的物理存在形式）
@@ -152,9 +153,9 @@ has_toc: true
 
 
 <!-- **IMPORTANT**: At this point you should check that at least the most important limbs of your character have the limb types properly defined. Select the 'Limbs' mode and enable 'Parameters' to see the limb parameters for each limb in the parameter editor. Make sure that the character has a torso and/or a head, that the legs and arms are defined as such, and that the tail limbs are given the type 'Tail'. If the limb types are wrong, the animations will not work as intended, because the system doesn't know which limb it should move to make the character swim or walk, for example. -->  
-**重要提示**：在这个阶段你应该至少确保所创建角色最重要躯干的躯干类型是否被正确定义。选择‘limb’编辑模式，勾上‘parameter'(参数），在右侧的参数编辑器查看每个肢体的参数。确保角色有躯干和头（如果设计上有的话），并且手脚这些肢体也同样定义好，如果有尾巴，那么其类型是'tail’（尾巴）。如果肢体类型没设置好，那么其动画将无法按预计情况工作，系统将不知道用哪个肢体来实现角色的游泳与跑步的动画。  
+**重要提示**：在这个阶段你应该至少确保所创建角色最重要躯干的躯干类型是否都被正确定义。选择‘limb’编辑模式，勾上‘parameter'(参数），在右侧的参数编辑器查看每个肢体的参数。确保角色有躯干和头（如果设计上有的话），并且手脚这些肢体也同样定义好，如果有尾巴，那么其类型是'tail’（尾巴）。如果肢体类型没设置好，那么其动画将无法按预计情况工作，系统将不知道用哪个肢体来实现角色的游泳与跑步的动画。  
 
-For characters that can walk, it's also important that the 'Height From Floor' parameter is given a reasonable value. Otherwise the character won't stand where it should. This parameter doesn't have any effect on swimming characters.  
+<!-- For characters that can walk, it's also important that the 'Height From Floor' parameter is given a reasonable value. Otherwise the character won't stand where it should. This parameter doesn't have any effect on swimming characters.  -->  
 对于设置为能够行走的角色，给'height From Floor'（离地高度）参数设置一个合理的值也非常重要，否则角色会站在奇怪的位置。这个参数不会影响游泳状态下的角色。  
 
 <!-- **TIP**: When you have limbs or joints selected, only the selected elements are shown in the parameter editor. If you want to see all the limbs or joints, deselect all by clicking the right mouse button. -->  
@@ -190,7 +191,7 @@ For characters that can walk, it's also important that the 'Height From Floor' p
 <!-- A character’s config parameters define visual things like sounds and particle effects as well as functional things, like how the character acts, how much health it has, and whether or not it can walk. The parameters are stored in the character config file.  -->
 角色的配置参数决定了声效和例子特效等效果以及功能性的内容，比如角色的行动逻辑、最大生命值、是否能行走。这些参数都储存在角色的配置文件中。  
 
-Enable 'Character' on the 'Edit' panel to see the character config parameters.
+<!-- Enable 'Character' on the 'Edit' panel to see the character config parameters. -->  
 在‘Edit’（编辑）选单中勾选上‘Character'（角色/对象）选项后就可以在右边查看角色配置参数。  
 
 ![](img_CharacterEditor/CharacterConfig.png)
@@ -210,7 +211,7 @@ AI这一部分比较重要，也可能需要比较多的讲解。，记住，这
 
 
 ## Damage modifiers 伤害补正。
-When you select a limb and enable the parameters \('Show' \-\> 'Parameters'\), you might notice that there are some things that are not yet explained in this guide. These are: attack, damage modifier, sound, and light. All these are optional settings for the selected limb\(s\). They are not visible, if no limb is selected.  
+<!--When you select a limb and enable the parameters \('Show' \-\> 'Parameters'\), you might notice that there are some things that are not yet explained in this guide. These are: attack, damage modifier, sound, and light. All these are optional settings for the selected limb\(s\). They are not visible, if no limb is selected. -->   
 当你选中了一个肢体并且勾选上参数（parameters)选项时，你可能会注意到参数中有一些本指南中没有解释的内容，比如Attack、damage modifier、 sound、 light等等。这些都是对于所选肢体的可选设置，在没有选中肢体的情况下是不可见的。  
 
 <!-- I'm not going to go through all the options in detail, as there are tooltips in the editor and you should be able to figure them out by experimenting. However, there are some things that probably need a bit of explaining. -->  
@@ -243,7 +244,7 @@ When you select a limb and enable the parameters \('Show' \-\> 'Parameters'\), y
 <!-- The hit detection type defines the method of how the hit is evaluated: a distance or a contact \(collision\). A distance\-based attack hits the target if it's closer than what is defined in the 'Damage Range' parameter. Note that the distance is calculated from the center of the limb, not from an edge. In some cases, the contact\-based method might be better because it's more precise. The downside is that it cannot hit targets that don't actually hit the collider of the attack limb. -->  
 攻击检测类型决定了攻击被计算的方式：一个远程性的或者接触性的（碰撞）。远程性攻击能在'Damage Range'（攻击范围）参数设置距离内的有效。注意这个距离是从肢体的中心算起，而非边缘。在某些情况下，直接接触性的攻击会更精确。但缺点是如果没有真的碰撞到进行攻击的肢体那么就会无效。  
 
-It's important that the 'Range' is not too high or the 'Damage Range' too low, or the character won't hit its target. Likewise, it's important that the 'Duration' of the attack is not too low, or the attack might miss the target.
+<!-- It's important that the 'Range' is not too high or the 'Damage Range' too low, or the character won't hit its target. Likewise, it's important that the 'Duration' of the attack is not too low, or the attack might miss the target. -->
 需要注意的是，'Range'（范围？）参数不能太高，‘damage Range’（伤害有效范围）不能太低，否则角色打不中目标。类似的，‘Duration'(持续时间）也不能太短，否则攻击会打不中目标。  
 
 <!-- Note that currently each limb may only have one attack \(for the sake of simplicity\). If you need to define multiple attacks on head, for example, you can always create an extra limb and hide it. You might also want to disable the collisions for this hidden limb. This can be done by selecting the limb and crossing over the 'Parameters' option on the 'Show' panel. -->  
