@@ -18,7 +18,7 @@ has_toc: true
 一个角色的移动是在**"Animation"**文件（下称动画文件）中定义的。动画文件中包含了如理量、修正系数和其他定义作用于布娃娃运动的力量的变量。每一个动画类型都是由独立的文件定义的。对于一个可以移动的角色来说，其需要四个不同的问文件:walk(走）、run(跑）、SwimSlow(低速游泳）和SwimFast(高速游泳）  
 。
 <!-- In the character editor, you can edit all the character files without having to worry about .xml editing. In the following, you can find more detailed instructions for editing each of these files or aspects of the character. -->  
-在角色编辑器中，你可以编辑所有的角色文件并且不用担心.xml文件的编辑。接下来，你将能在这里发现更细致的关于编辑角色的各个文件和方面的指导。
+在角色编辑器中，您可以编辑所有的角色文件并且不用担心.xml文件的编辑。接下来，您将能在这里发现更细致的关于编辑角色的各个文件和方面的指导。
 
 <!-- **TIP**: Use the number keys \[1\] to \[5\] on your keyboard to quickly switch between the different edit modes. -->  
 **提示**：使用数字键1-5可以快速切换不同的编辑模式。
@@ -28,7 +28,7 @@ has_toc: true
 ![](img_CharacterEditor/CreateNewCharacter.png)
 
 <!-- To create a new character, click the 'Create New Character' button found on the 'Files' panel. The following view will ask for basic information about the character you are about to create. The paths to the config file and the texture path are both relative to the Barotrauma project folder. -->  
-如果要创造一个新生物，请点击在‘files'选单上的"create new Character"(创造新角色\生物）按钮。之后弹出来的窗口中会向您确定你要创造生物的基本信息。其配置文件和贴图文件都是相对于潜渊症游戏目录定位。
+如果要创造一个新生物，请点击在‘files'选单上的"create new Character"(创造新角色\生物）按钮。之后弹出来的窗口中会向您确定要创造生物的基本信息。其配置文件和贴图文件都是相对于潜渊症游戏目录定位。
 
 
 <!-- The 'Config File Output' is the path to the character config file. At this point, the file does not yet exist: it will be stored on disk when the character is created. You can change the path here, but the default should be fine too. -->  'Config File Output' 是角色配置文件的路径。在这个时候，实际文件还没有生成：当你橘色创造后才会储存在硬盘上。您可以在这个页面改变路径，但默认路径应该不至于要换。  
@@ -195,55 +195,73 @@ Enable 'Character' on the 'Edit' panel to see the character config parameters.
 
 ![](img_CharacterEditor/CharacterConfig.png)
 
-The AI section is an important one and might require a bit of explaining. Note that these settings *only apply to non-humans*. The human AI is a separate beast altogether.
+<!-- The AI section is an important one and might require a bit of explaining. Note that these settings *only apply to non-humans*. The human AI is a separate beast altogether. -->  
+AI这一部分比较重要，也可能需要比较多的讲解。，记住，这些设置*只对非人类角色有效*。人类的ai又是另一个糟心玩意了。  
 
-In the AI section, you can add targets with priorities and states. These are used by the AI to make decisions about which things the character should target, which state it should use while targeting, and what \(base\) priority should be given to this target. The actual priority is determined by dynamic factors like distance from the target.
+<!-- In the AI section, you can add targets with priorities and states. These are used by the AI to make decisions about which things the character should target, which state it should use while targeting, and what \(base\) priority should be given to this target. The actual priority is determined by dynamic factors like distance from the target. -->  
+在AI部分，你可以添加目标并设置目标优先级（priority）和对目标的行动策略（state)。这些设置将影响AI关于对哪个目标，做出什么反应，基础优先程度多少等问题的响应。实际的优先程度受到其他动态因素的影响，比如与目标的距离。  
 
-You might also want to add some sounds and particles \(like blood\) to your character. If you want the character to drop some items, give it an inventory too.
+<!-- You might also want to add some sounds and particles \(like blood\) to your character. If you want the character to drop some items, give it an inventory too. -->  
+你可能想要给生物添加一些声效和粒子效果（例如喷射出的血液）。如果你想这些生物掉落什么物品，也要记得给他们物品栏。  
 
-**TIP**: The AI characters only target entities that have `<aitarget/>` tags in the XML definition. For some things, like the walls, this tag is added automatically in the code.
+<!-- **TIP**: The AI characters only target entities that have `<aitarget/>` tags in the XML definition. For some things, like the walls, this tag is added automatically in the code. -->  
+**提示**：AI生物只会以在xml文件有‘<aiTarget/>’标识（tag）的实体为目标。对于一些实体，比如墙体，这个tag已经在代码里自动添加上了。  
 
 
 
-## Damage modifiers
-When you select a limb and enable the parameters \('Show' \-\> 'Parameters'\), you might notice that there are some things that are not yet explained in this guide. These are: attack, damage modifier, sound, and light. All these are optional settings for the selected limb\(s\). They are not visible, if no limb is selected.
+## Damage modifiers 伤害补正。
+When you select a limb and enable the parameters \('Show' \-\> 'Parameters'\), you might notice that there are some things that are not yet explained in this guide. These are: attack, damage modifier, sound, and light. All these are optional settings for the selected limb\(s\). They are not visible, if no limb is selected.  
+当你选中了一个肢体并且勾选上参数（parameters)选项时，你可能会注意到参数中有一些本指南中没有解释的内容，比如Attack、damage modifier、 sound、 light等等。这些都是对于所选肢体的可选设置，在没有选中肢体的情况下是不可见的。  
 
-I'm not going to go through all the options in detail, as there are tooltips in the editor and you should be able to figure them out by experimenting. However, there are some things that probably need a bit of explaining.
+<!-- I'm not going to go through all the options in detail, as there are tooltips in the editor and you should be able to figure them out by experimenting. However, there are some things that probably need a bit of explaining. -->  
+我不打算详细地讲解完这些非必要的内容，因为在编辑器中有提示，而且你也能通过试验来弄明白他们。但是，还是有一些内容需要阐释的。  
 
 ![](img_CharacterEditor/DamageModifier.png)
 
-Let's first take a look at the damage modifier. A damage modifier defines a multiplier for certain damage types. If the multiplier is above 1, the modifier increases the final damage on the character when it's hit on the selected limb. If the multiplier is below 1, the damage is reduced.
+<!-- Let's first take a look at the damage modifier. A damage modifier defines a multiplier for certain damage types. If the multiplier is above 1, the modifier increases the final damage on the character when it's hit on the selected limb. If the multiplier is below 1, the damage is reduced. -->  
+让我们先看看伤害补正。伤害修饰系数决定了某种特定伤害的增益倍数，如果这个倍数（multiplier)大于1，那么补正就会增加角色在这个肢体上所受到的该类伤害。如果小于1，那么伤害就会降低。  
 
-If you enable 'Damage Modifiers' on the 'Show' panel, all the modifiers that decrease the damage are drawn on green over the character and the modifiers that increase the damage are drawn on red.
+<!-- If you enable 'Damage Modifiers' on the 'Show' panel, all the modifiers that decrease the damage are drawn on green over the character and the modifiers that increase the damage are drawn on red. -->  
+如果你在‘show’（显示）选单中勾选了‘Damage Modifiers’(伤害补正\损伤）选项，那么绿色的减伤实体和红色的增伤肢体就会显示在角色上。  
 
-Damage modifiers are defined as sectors \(in degrees\) beginning from the top \(0\) and ending at the top \(360\) when looking at the sprite sheet. Note that sprite sheet orientation doesn't have any effect on this. For example, if you'd want to define a damage sector that only affects the upper side of the sprite, you would define it as x: \-90 and y: 90.
+<!-- Damage modifiers are defined as sectors \(in degrees\) beginning from the top \(0\) and ending at the top \(360\) when looking at the sprite sheet. Note that sprite sheet orientation doesn't have any effect on this. For example, if you'd want to define a damage sector that only affects the upper side of the sprite, you would define it as x: \-90 and y: 90. -->  
+伤害补正在贴图上看起来是一个扇形（用度数定义），从0度开始，止于360度。注意，贴图表角度偏移量对其没有影响。如果你想让伤害补正扇形只影响贴图的上半部，你可以这样编辑其armor sector(覆盖扇形）：X -90，y 90。  
 
 
-## Attacks
-Another thing that might require an explanation is the attack section. To add an attack, press the 'Add Attack' button, which is visible when you have a limb selected and when you have enabled 'Parameters' on the 'Show' panel.
+## Attacks 攻击
+<!-- Another thing that might require an explanation is the attack section. To add an attack, press the 'Add Attack' button, which is visible when you have a limb selected and when you have enabled 'Parameters' on the 'Show' panel. -->  
+另一个可能需要阐释的就是攻击这一部分了。如果要添加一个攻击模块，请在选中你想添加攻击的肢体并确保在显示（Show)选单中勾选上参数(Parameters)选项后点击在右侧参数设置列表的最下方的'add attack'（添加攻击）。  
 
 ![](img_CharacterEditor/AttackSettings.png)
 
-When a creature uses the attack, the forces defined in the attack parameters are applied on the attacking limb. This creates the attack 'animation'. The forces can be applied only once or during the entire duration of the attack. When a legitimate hit is registered, the attack can also apply forces on the target that was hit. Note that these two things are completely separate from each other!
+<!-- When a creature uses the attack, the forces defined in the attack parameters are applied on the attacking limb. This creates the attack 'animation'. The forces can be applied only once or during the entire duration of the attack. When a legitimate hit is registered, the attack can also apply forces on the target that was hit. Note that these two things are completely separate from each other! -->  
+当生物进行攻击时，定义在attack参数中的力将作用于进行攻击的肢体。这便形成了攻击的动画。这个力可以只声效一次或者在整个攻击过程中持续添加。当正确的碰撞在系统中记录时，这次攻击同时也对受击目标施加了力。注意，这是两个完全不一样的东西！  
 
-Attacks have a 'Context' and a 'Target Type' that can be used to restrict their use. By default, an attack can be used anywhere and against any target.
+<!-- Attacks have a 'Context' and a 'Target Type' that can be used to restrict their use. By default, an attack can be used anywhere and against any target. -->  
+攻击可以通过‘context'(适用环境)和‘Target Type'（适用对象）来限制。默认情况下，攻击可以在任何地点对任意目标使用。  
 
-The hit detection type defines the method of how the hit is evaluated: a distance or a contact \(collision\). A distance\-based attack hits the target if it's closer than what is defined in the 'Damage Range' parameter. Note that the distance is calculated from the center of the limb, not from an edge. In some cases, the contact\-based method might be better because it's more precise. The downside is that it cannot hit targets that don't actually hit the collider of the attack limb.
+<!-- The hit detection type defines the method of how the hit is evaluated: a distance or a contact \(collision\). A distance\-based attack hits the target if it's closer than what is defined in the 'Damage Range' parameter. Note that the distance is calculated from the center of the limb, not from an edge. In some cases, the contact\-based method might be better because it's more precise. The downside is that it cannot hit targets that don't actually hit the collider of the attack limb. -->  
+攻击检测类型决定了攻击被计算的方式：一个远程性的或者接触性的（碰撞）。远程性攻击能在'Damage Range'（攻击范围）参数设置距离内的有效。注意这个距离是从肢体的中心算起，而非边缘。在某些情况下，直接接触性的攻击会更精确。但缺点是如果没有真的碰撞到进行攻击的肢体那么就会无效。  
 
 It's important that the 'Range' is not too high or the 'Damage Range' too low, or the character won't hit its target. Likewise, it's important that the 'Duration' of the attack is not too low, or the attack might miss the target.
+需要注意的是，'Range'（范围？）参数不能太高，‘damage Range’（伤害有效范围）不能太低，否则角色打不中目标。类似的，‘Duration'(持续时间）也不能太短，否则攻击会打不中目标。  
 
-Note that currently each limb may only have one attack \(for the sake of simplicity\). If you need to define multiple attacks on head, for example, you can always create an extra limb and hide it. You might also want to disable the collisions for this hidden limb. This can be done by selecting the limb and crossing over the 'Parameters' option on the 'Show' panel.
+<!-- Note that currently each limb may only have one attack \(for the sake of simplicity\). If you need to define multiple attacks on head, for example, you can always create an extra limb and hide it. You might also want to disable the collisions for this hidden limb. This can be done by selecting the limb and crossing over the 'Parameters' option on the 'Show' panel. -->  
+注意，目前每个肢体最好只有一个攻击参数（为了简单起见）。如果你需要在头部定义多个攻击，你可以试着在头部创建一个额外的肢体并隐藏起来。这样你估计也需要取消这个隐藏肢体的碰撞体，只需要选择这个肢体并在参数列表力找到忽视碰撞就好。  
 
 
 
-## File structure
+## File structure  文件结构
 ![](img_CharacterEditor/FileStructure.png)
 
-When you create a new character, you are asked to define a path for the character config file \(e.g. %ModDir%/Characters/Mycharacter.xml\). It's strongly advised that the texture and sound files are placed in the same folder or in subfolders at the same location as the character config file.
+<!-- When you create a new character, you are asked to define a path for the character config file \(e.g. %ModDir%/Characters/Mycharacter.xml\). It's strongly advised that the texture and sound files are placed in the same folder or in subfolders at the same location as the character config file. -->  
+当你创建角色的时候，你被要求要决定角色的配置文件路径 \(比如 %ModDir%/Characters/Mycharacter.xml\)。我们强烈推荐您把贴图、声音文件放在这角色配置路径的同一文件夹或者子文件夹。  
 
-When a new character is created in the editor, the system automatically adds the reference to the character config file in the content package and creates the animation and ragdoll files for you.
+<!-- When a new character is created in the editor, the system automatically adds the reference to the character config file in the content package and creates the animation and ragdoll files for you. -->
+当在编辑器中创建新角色时，系统会自动将相关文件添加到选定内容包中的角色配置文件夹，还会为您创建动画和角色的布娃娃状态。  
 
-If you don't want to use the default paths, you can change the paths in the character config, by changing the values for the 'folder' attributes of 'ragdolls' and 'animations' elements.
+<!-- If you don't want to use the default paths, you can change the paths in the character config, by changing the values for the 'folder' attributes of 'ragdolls' and 'animations' elements. -->  
+如果你不想使用默认的路径，你可以在角色配置中改变路径——改变xml文件中‘ragdolls'和‘animations'的‘floder'的值来改变路径。（如下）
 
 ```xml
 <Character SpeciesName="Stainedraptor" ...>
@@ -252,32 +270,51 @@ If you don't want to use the default paths, you can change the paths in the char
   ...
 ```
 
-**IMPORTANT**: Don't rename the animation or ragdoll files or the game won’t be able to use them. This will hopefully be changed at some point, but for now, just use the default filenames.
-
-**IMPORTANT**: To avoid issues with the file structure, please capitalize the first letter in the character name and nothing else. The character name should match the folder name and the species name \(found in the character config file\).
-
-**TIP**: You can have multiple ragdolls and animations for a single character, but currently only the defaults are used in\-game.
-
-**TIP**: Everything you edit in the editor has a representation in the .xml files. If you edit the animations, the animation files will change. And if you edit the ragdoll, the ragdoll file will change.
+<!-- **IMPORTANT**: Don't rename the animation or ragdoll files or the game won’t be able to use them. This will hopefully be changed at some point, but for now, just use the default filenames. -->  
+**重要提示**：请不要重命名ragdoll和animation文件，不然游戏就不能使用他们。可能之后会有所改变，但现在，还请使用默认文件名。  
 
 
-## Limitations
-There are some limitations to keep in mind when using the character editor. We work to reduce the amount of limitations, going forward. Also note that all the limitations can be overcome by manually editing the .xml files.
+<!-- **IMPORTANT**: To avoid issues with the file structure, please capitalize the first letter in the character name and nothing else. The character name should match the folder name and the species name \(found in the character config file\). -->  
+为了避免文件结构商店问题，还请仅大写角色名词的首字母。角色名称需要与文件名字、物种名字（在角色的配置文件中有写）相匹配。  
 
-The current limitations in the character editor are the following:
 
-- Unlike the animation parameters, many of the ragdoll parameters are not updated at runtime. Click 'Recreate Ragdoll' or press F5 to see the changes applied.
+<!-- **TIP**: You can have multiple ragdolls and animations for a single character, but currently only the defaults are used in\-game. -->  
+**提示**：您可以在单个角色中放置多个角色的布娃娃、动画文件，但是目前只有默认的那个会生效。   
+
+
+<!-- **TIP**: Everything you edit in the editor has a representation in the .xml files. If you edit the animations, the animation files will change. And if you edit the ragdoll, the ragdoll file will change. -->  
+**提示**：您在编辑器中的所有编辑操作都将在.xml文件中有所呈现，如果你编辑了动画，那么animation文件就将随之改变，如果你编辑了角色的布娃娃形式，那么ragdoll文件也将随之改变。  
+
+
+## Limitations  限制
+<!-- There are some limitations to keep in mind when using the character editor. We work to reduce the amount of limitations, going forward. Also note that all the limitations can be overcome by manually editing the .xml files. -->  
+仍然有一些您需要在使用角色编辑器时需要记住的限制。虽说我们会尽力减少这些限制的数量，但话归正题。也牢记所有的限制都可以通过手动编辑.xml文件来克服。  
+
+<!-- The current limitations in the character editor are the following: -->  
+目前角色编辑器的限制如下：
+
+
+<!-- - Unlike the animation parameters, many of the ragdoll parameters are not updated at runtime. Click 'Recreate Ragdoll' or press F5 to see the changes applied.
 - Not all aspects of humanoids are exposed in the editor.
 - Some AI behavior, like latching or swarming cannot be edited in the editor.
 - There is no support for status effects in the character editor.
 - Conditional sprites or damage overlays are not visible or editable in the editor.
 - Sprite deformations are partially editable, but you cannot add or remove them in the editor.
-- Decorative sprites are not editable in the editor.
+- Decorative sprites are not editable in the editor. -->  
+- 与动画的参数不同，许多布娃娃方面的参数并非实时更新，请点击‘recreate Ragdoll’(重载角色）或者F5来看改变是否实现。
+- 人类种并没有在编辑器中公布其所有的属性。
+- 一些AI的举动，比如抓取和群体行为在编辑器中无法编辑。
+- 角色编辑器中不支持状态效果。
+- 条件性显示的贴图和受伤贴图无法在编辑器中查看或修改。
+- 贴图的受损、变形只有部分是可编辑的，但你无法在编辑器中添加或删去它们。
+- 装饰性贴图不能在编辑器中编辑。  
 
-## Publishing your character
-Publishing a custom character is the same as any other mod, see the [Publishing](../Intro/Publishing.md) page for instructions.
+## Publishing your character  发布您的角色！
+<!-- Publishing a custom character is the same as any other mod, see the [Publishing](../Intro/Publishing.md) page for instructions. -->  
+发布自制角色和发布其他mod一样，详情请见[发布](../Intro/Publishing.md)页面。  
 
-## Thanks for reading!
-We hope you found this guide helpful. It’s still a work in progress, so all feedback is most welcome! We look forward to seeing your awesome custom characters on Barotrauma's Steam workshop. If you have any questions, please use the \#baro\-modding channel on our [Discord](http://discord.gg/undertow)  or the Workshop Discussions subforum here on Steam.
+## Thanks for reading! 感谢您的阅读！
+<!-- We hope you found this guide helpful. It’s still a work in progress, so all feedback is most welcome! We look forward to seeing your awesome custom characters on Barotrauma's Steam workshop. If you have any questions, please use the \#baro\-modding channel on our [Discord](http://discord.gg/undertow)  or the Workshop Discussions subforum here on Steam. -->
+我们希望您能从这篇指南中获益。这是一项仍然在推进的工程，我们十分热切地欢迎一切反馈！我们期待着在steam创意工坊发现你们的杰出的自制角色。如果你有任何疑问，还请到我们的[Discord](http://discord.gg/undertow)服务器\#baro\-modding频道或者创意工坊的讨论子论坛参与讨论！
 
 
